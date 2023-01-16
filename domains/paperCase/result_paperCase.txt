@@ -1,0 +1,747 @@
+Compiling problem: %s /home/zeng/temporal-planning/bin/compileTempo tdom.pddl tins.pddl 2 > dom.pddl 2> ins.pddl
+Compiling temporal problem: %s python /home/zeng/temporal-planning/fd_copy/fast-downward.py --build release64 --alias tp-lama --overall-time-limit 3600s --overall-memory-limit 4096 --plan-file sas_plan dom.pddl ins.pddl
+INFO     Running translator.
+INFO     translator input: ['dom.pddl', 'ins.pddl']
+INFO     translator arguments: []
+INFO     translator time limit: 3599.97s
+INFO     translator memory limit: 4096 MB
+INFO     callstring: /usr/bin/python /home/zeng/temporal-planning/fd_copy/builds/release64/bin/translate/translate.py dom.pddl ins.pddl
+time limit 3599.97 -> (3600, 3601)
+Parsing...
+Parsing: [0.010s CPU, 0.005s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.004s wall-clock]
+Preparing model... [0.010s CPU, 0.003s wall-clock]
+Generated 100 rules.
+Computing model... [0.100s CPU, 0.105s wall-clock]
+4553 relevant atoms
+9712 auxiliary atoms
+14265 final queue length
+27035 total queue pushes
+Completing instantiation... [0.240s CPU, 0.239s wall-clock]
+Instantiating: [0.350s CPU, 0.354s wall-clock]
+Computing fact groups...
+Finding invariants...
+43 initial candidates
+Finding invariants: [0.020s CPU, 0.018s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.001s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.001s wall-clock]
+Choosing groups...
+1549 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.010s CPU, 0.006s wall-clock]
+Computing fact groups: [0.040s CPU, 0.039s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.001s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.002s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.002s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.020s CPU, 0.018s wall-clock]
+Translating task: [0.440s CPU, 0.443s wall-clock]
+9406 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+66 propositions removed
+Detecting unreachable propositions: [0.150s CPU, 0.141s wall-clock]
+Translator variables: 1567
+Translator derived variables: 0
+Translator facts: 3152
+Translator goal facts: 11
+Translator mutex groups: 18
+Translator total mutex groups size: 54
+Translator operators: 2696
+Translator axioms: 0
+Translator task size: 53490
+Translator peak memory: 67208 KB
+Writing output... [0.080s CPU, 0.081s wall-clock]
+Done! [1.080s CPU, 1.081s wall-clock]
+INFO     Running preprocessor (release64).
+INFO     preprocessor input: output.sas
+INFO     preprocessor arguments: []
+INFO     preprocessor time limit: 3598.86s
+INFO     preprocessor memory limit: 4096 MB
+INFO     callstring: /home/zeng/temporal-planning/fd_copy/builds/release64/bin/preprocess < output.sas
+time limit 3598.86 -> (3599, 3600)
+Building causal graph...
+The causal graph is not acyclic.
+1477 variables of 1567 necessary
+0 of 18 mutex groups necessary.
+2696 of 2696 operators necessary.
+0 of 0 axiom rules necessary.
+Building domain transition graphs...
+solveable in poly time 0
+Building successor generator...
+Preprocessor facts: 2972
+Preprocessor derived variables: 0
+Preprocessor task size: 52086
+Writing output...
+done
+INFO     Running search (release64).
+INFO     search input: output
+INFO     search arguments: ['--if-unit-cost', '--heuristic', 'hlm,hff=lm_ff_syn(lm_rhw(reasonable_orders=true))', '--search', 'tp_lazy_greedy([hff,hlm],preferred=[hff,hlm])', '--if-non-unit-cost', '--heuristic', 'hlm1,hff1=lm_ff_syn(lm_rhw(reasonable_orders=true,lm_cost_type=one,cost_type=one))', '--heuristic', 'hlm2,hff2=lm_ff_syn(lm_rhw(reasonable_orders=true,lm_cost_type=plusone,cost_type=plusone))', '--search', 'tp_iterated([tp_lazy_greedy([hff1,hlm1],preferred=[hff1,hlm1],cost_type=one,reopen_closed=false),tp_lazy_greedy([hff2,hlm2],preferred=[hff2,hlm2],reopen_closed=false)],repeat_last=false,continue_on_fail=false)', '--always']
+INFO     search time limit: 3598.12s
+INFO     search memory limit: 4096 MB
+INFO     search executable: /home/zeng/temporal-planning/fd_copy/builds/release64/bin/downward
+INFO     callstring: /home/zeng/temporal-planning/fd_copy/builds/release64/bin/downward --if-unit-cost --heuristic 'hlm,hff=lm_ff_syn(lm_rhw(reasonable_orders=true))' --search 'tp_lazy_greedy([hff,hlm],preferred=[hff,hlm])' --if-non-unit-cost --heuristic 'hlm1,hff1=lm_ff_syn(lm_rhw(reasonable_orders=true,lm_cost_type=one,cost_type=one))' --heuristic 'hlm2,hff2=lm_ff_syn(lm_rhw(reasonable_orders=true,lm_cost_type=plusone,cost_type=plusone))' --search 'tp_iterated([tp_lazy_greedy([hff1,hlm1],preferred=[hff1,hlm1],cost_type=one,reopen_closed=false),tp_lazy_greedy([hff2,hlm2],preferred=[hff2,hlm2],reopen_closed=false)],repeat_last=false,continue_on_fail=false)' --always --internal-plan-file sas_plan < output
+time limit 3598.12 -> (3599, 3600)
+reading input... [t=0s]
+done reading input! [t=0.0346311s]
+packing state variables...done! [t=0.0346311s]
+Variables: 1477
+Facts: 2972
+Bytes per state: 188
+Building successor generator...done! [t=0.126617s]
+done initalizing global data [t=0.126617s]
+Initializing Exploration...
+Generating landmarks using the RPG/SAS+ approach
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.0320042s
+Discovered 21 landmarks, of which 0 are disjunctive and 0 are conjunctive 
+10 edges
+Initializing landmarks count heuristic...
+11 initial landmarks, 11 goal landmarks
+Initializing LAMA-FF synergy object
+Initializing Exploration...
+Generating landmarks using the RPG/SAS+ approach
+Switch from bucket-based to heap-based queue at key = 20001, num_pushes = 1477
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.0399968s
+Discovered 21 landmarks, of which 0 are disjunctive and 0 are conjunctive 
+10 edges
+Initializing landmarks count heuristic...
+11 initial landmarks, 11 goal landmarks
+Initializing LAMA-FF synergy object
+Starting search: tp_lazy_greedy(list(hff1, hlm1), preferred = list(hff1, hlm1), cost_type = one, reopen_closed = false)
+Conducting TP lazy best first search, (real) bound = 2147483647
+New best heuristic value for <missing>: 10
+New best heuristic value for <missing>: 60
+[g=0, 1 evaluated, 0 expanded, t=0.206618s, 20268 KB]
+Initial heuristic value for <missing>: 10
+Initial heuristic value for <missing>: 60
+New best heuristic value for <missing>: 56
+[g=4, 14 evaluated, 13 expanded, t=0.218617s, 20268 KB]
+New best heuristic value for <missing>: 54
+[g=6, 19 evaluated, 18 expanded, t=0.222621s, 20268 KB]
+New best heuristic value for <missing>: 50
+[g=8, 22 evaluated, 21 expanded, t=0.22662s, 20268 KB]
+New best heuristic value for <missing>: 49
+[g=11, 29 evaluated, 28 expanded, t=0.234617s, 20268 KB]
+New best heuristic value for <missing>: 48
+[g=12, 38 evaluated, 37 expanded, t=0.242615s, 20268 KB]
+New best heuristic value for <missing>: 47
+[g=18, 102 evaluated, 101 expanded, t=0.294612s, 20268 KB]
+New best heuristic value for <missing>: 46
+[g=21, 136 evaluated, 135 expanded, t=0.310613s, 20268 KB]
+New best heuristic value for <missing>: 9
+[g=18, 560 evaluated, 546 expanded, t=0.534595s, 20268 KB]
+New best heuristic value for <missing>: 8
+[g=20, 569 evaluated, 555 expanded, t=0.538596s, 20268 KB]
+New best heuristic value for <missing>: 43
+[g=22, 593 evaluated, 579 expanded, t=0.550598s, 20268 KB]
+New best heuristic value for <missing>: 42
+[g=28, 633 evaluated, 619 expanded, t=0.5706s, 20268 KB]
+New best heuristic value for <missing>: 41
+[g=28, 661 evaluated, 647 expanded, t=0.594615s, 20268 KB]
+New best heuristic value for <missing>: 40
+[g=30, 665 evaluated, 651 expanded, t=0.602602s, 20268 KB]
+New best heuristic value for <missing>: 39
+[g=35, 740 evaluated, 726 expanded, t=0.654591s, 20268 KB]
+New best heuristic value for <missing>: 7
+[g=32, 934 evaluated, 917 expanded, t=0.766586s, 20532 KB]
+New best heuristic value for <missing>: 38
+[g=38, 990 evaluated, 973 expanded, t=0.790587s, 20532 KB]
+New best heuristic value for <missing>: 37
+[g=46, 1063 evaluated, 1046 expanded, t=0.850584s, 20532 KB]
+New best heuristic value for <missing>: 36
+[g=47, 1071 evaluated, 1054 expanded, t=0.854584s, 20532 KB]
+New best heuristic value for <missing>: 35
+[g=48, 1075 evaluated, 1058 expanded, t=0.858591s, 20664 KB]
+New best heuristic value for <missing>: 34
+[g=53, 1159 evaluated, 1142 expanded, t=0.914584s, 20664 KB]
+New best heuristic value for <missing>: 6
+New best heuristic value for <missing>: 33
+[g=56, 1180 evaluated, 1162 expanded, t=0.930599s, 20664 KB]
+New best heuristic value for <missing>: 32
+[g=57, 1184 evaluated, 1166 expanded, t=0.934591s, 20664 KB]
+New best heuristic value for <missing>: 5
+New best heuristic value for <missing>: 31
+[g=58, 1189 evaluated, 1171 expanded, t=0.938583s, 20664 KB]
+New best heuristic value for <missing>: 30
+[g=59, 1190 evaluated, 1172 expanded, t=0.938583s, 20664 KB]
+New best heuristic value for <missing>: 29
+[g=66, 1234 evaluated, 1216 expanded, t=0.970561s, 20800 KB]
+New best heuristic value for <missing>: 28
+[g=67, 1236 evaluated, 1218 expanded, t=0.974562s, 20800 KB]
+New best heuristic value for <missing>: 27
+[g=68, 1238 evaluated, 1220 expanded, t=0.974562s, 20800 KB]
+New best heuristic value for <missing>: 26
+[g=69, 1240 evaluated, 1222 expanded, t=0.974562s, 20800 KB]
+New best heuristic value for <missing>: 25
+[g=70, 1242 evaluated, 1223 expanded, t=0.974562s, 20800 KB]
+New best heuristic value for <missing>: 24
+[g=71, 1243 evaluated, 1224 expanded, t=0.978562s, 20800 KB]
+New best heuristic value for <missing>: 23
+[g=72, 1245 evaluated, 1226 expanded, t=0.978562s, 20800 KB]
+New best heuristic value for <missing>: 22
+[g=73, 1250 evaluated, 1231 expanded, t=0.986576s, 20800 KB]
+New best heuristic value for <missing>: 4
+New best heuristic value for <missing>: 21
+[g=74, 1255 evaluated, 1236 expanded, t=0.990562s, 20800 KB]
+New best heuristic value for <missing>: 3
+New best heuristic value for <missing>: 18
+[g=78, 1265 evaluated, 1245 expanded, t=0.99856s, 20800 KB]
+New best heuristic value for <missing>: 17
+[g=83, 1275 evaluated, 1255 expanded, t=1.00256s, 20800 KB]
+New best heuristic value for <missing>: 16
+[g=84, 1278 evaluated, 1258 expanded, t=1.00656s, 20800 KB]
+New best heuristic value for <missing>: 2
+New best heuristic value for <missing>: 14
+[g=90, 1298 evaluated, 1277 expanded, t=1.02256s, 20800 KB]
+New best heuristic value for <missing>: 13
+[g=95, 1308 evaluated, 1287 expanded, t=1.02656s, 20800 KB]
+New best heuristic value for <missing>: 12
+[g=100, 1318 evaluated, 1297 expanded, t=1.03456s, 20800 KB]
+New best heuristic value for <missing>: 11
+[g=101, 1320 evaluated, 1299 expanded, t=1.03456s, 20800 KB]
+New best heuristic value for <missing>: 1
+New best heuristic value for <missing>: 10
+[g=102, 1321 evaluated, 1300 expanded, t=1.03456s, 20800 KB]
+New best heuristic value for <missing>: 9
+[g=109, 1331 evaluated, 1310 expanded, t=1.03856s, 20800 KB]
+New best heuristic value for <missing>: 8
+[g=110, 1332 evaluated, 1311 expanded, t=1.04256s, 20800 KB]
+New best heuristic value for <missing>: 7
+[g=111, 1333 evaluated, 1312 expanded, t=1.04256s, 20800 KB]
+New best heuristic value for <missing>: 6
+[g=112, 1334 evaluated, 1313 expanded, t=1.04256s, 20800 KB]
+New best heuristic value for <missing>: 5
+[g=113, 1335 evaluated, 1314 expanded, t=1.04256s, 20800 KB]
+New best heuristic value for <missing>: 4
+[g=114, 1336 evaluated, 1315 expanded, t=1.04656s, 20800 KB]
+New best heuristic value for <missing>: 3
+[g=115, 1337 evaluated, 1316 expanded, t=1.04656s, 20800 KB]
+New best heuristic value for <missing>: 2
+[g=116, 1338 evaluated, 1317 expanded, t=1.04656s, 20800 KB]
+New best heuristic value for <missing>: 1
+[g=117, 1339 evaluated, 1318 expanded, t=1.05057s, 20800 KB]
+Solution found!
+Actual search time: 0.84395s [t=1.05057s]
+0.000: ( move human1 location30 location20 ) [2.0000]
+2.002: ( move human1 location20 location21 ) [2.0000]
+4.004: ( move human1 location21 location22 ) [2.0000]
+6.006: ( move human1 location22 location12 ) [2.0000]
+8.008: ( pick human1 part5 location12 location02 rhand1 ) [1.0000]
+8.012: ( move robot1 location31 location21 ) [2.0000]
+9.010: ( pick human1 part6 location12 location02 lhand1 ) [1.0000]
+10.014: ( move human1 location12 location22 ) [2.0000]
+12.016: ( place human1 cab1 location22 location32 part5 rhand1 part5_holder ) [1.0000]
+13.018: ( place human1 cab1 location22 location32 part6 lhand1 part6_holder ) [1.0000]
+14.020: ( move human1 location22 location23 ) [2.0000]
+16.022: ( move human1 location23 location13 ) [2.0000]
+18.024: ( pick human1 part7 location13 location03 rhand1 ) [1.0000]
+19.026: ( move human1 location13 location12 ) [2.0000]
+21.028: ( move human1 location12 location22 ) [2.0000]
+23.030: ( place human1 cab1 location22 location32 part7 rhand1 part7_holder ) [1.0000]
+24.032: ( move robot1 location21 location11 ) [2.0000]
+26.034: ( move human1 location22 location23 ) [2.0000]
+28.036: ( pick robot1 part2 location11 location01 robothand1 ) [1.0000]
+29.038: ( move robot1 location11 location12 ) [2.0000]
+31.040: ( move human1 location23 location13 ) [2.0000]
+33.042: ( move human1 location13 location14 ) [2.0000]
+35.044: ( pick human1 part10 location14 location04 rhand1 ) [1.0000]
+36.046: ( pick human1 part8 location14 location04 lhand1 ) [1.0000]
+37.048: ( move human1 location14 location13 ) [2.0000]
+39.050: ( move human1 location13 location23 ) [2.0000]
+41.052: ( move human1 location23 location33 ) [2.0000]
+43.054: ( place human1 cab1 location33 location32 part8 lhand1 part8_holder ) [1.0000]
+44.056: ( place human1 cab1 location33 location32 part10 rhand1 part10_holder ) [1.0000]
+45.058: ( move human1 location33 location23 ) [2.0000]
+47.060: ( move human1 location23 location13 ) [2.0000]
+49.062: ( move human1 location13 location14 ) [2.0000]
+51.064: ( pick human1 part9 location14 location04 rhand1 ) [1.0000]
+52.066: ( move human1 location14 location13 ) [2.0000]
+54.068: ( move human1 location13 location23 ) [2.0000]
+56.070: ( move human1 location23 location33 ) [2.0000]
+58.072: ( place human1 cab1 location33 location32 part9 rhand1 part9_holder ) [1.0000]
+59.074: ( move robot1 location12 location22 ) [2.0000]
+61.076: ( place robot1 cab1 location22 location32 part2 robothand1 part2_holder ) [1.0000]
+62.078: ( move robot1 location22 location12 ) [2.0000]
+64.080: ( move robot1 location12 location11 ) [2.0000]
+66.082: ( pick robot1 part3 location11 location01 robothand1 ) [1.0000]
+67.084: ( move robot1 location11 location12 ) [2.0000]
+69.086: ( move robot1 location12 location22 ) [2.0000]
+71.088: ( place robot1 cab1 location22 location32 part3 robothand1 part3_holder ) [1.0000]
+72.090: ( move robot1 location22 location12 ) [2.0000]
+74.092: ( move robot1 location12 location11 ) [2.0000]
+76.094: ( pick robot1 part4 location11 location01 robothand1 ) [1.0000]
+77.096: ( move robot1 location11 location12 ) [2.0000]
+79.098: ( move robot1 location12 location22 ) [2.0000]
+81.100: ( place robot1 cab1 location22 location32 part4 robothand1 part4_holder ) [1.0000]
+82.102: ( move robot1 location22 location12 ) [2.0000]
+84.104: ( move robot1 location12 location11 ) [2.0000]
+86.106: ( move robot1 location11 location10 ) [2.0000]
+88.108: ( pick robot1 part1 location10 location00 robothand1 ) [1.0000]
+89.110: ( move robot1 location10 location11 ) [2.0000]
+91.112: ( move robot1 location11 location12 ) [2.0000]
+93.114: ( move robot1 location12 location22 ) [2.0000]
+95.116: ( place robot1 cab1 location22 location32 part1 robothand1 part1_holder ) [1.0000]
+start-move human1 location30 location20 (20000)
+end-move human1 location30 location20 (1)
+start-move human1 location20 location21 (20000)
+end-move human1 location20 location21 (1)
+start-move human1 location21 location22 (20000)
+end-move human1 location21 location22 (1)
+start-move human1 location22 location12 (20000)
+end-move human1 location22 location12 (1)
+start-pick human1 part5 location12 location02 rhand1 (10000)
+start-move robot1 location31 location21 (20000)
+end-pick human1 part5 location12 location02 rhand1 (1)
+start-pick human1 part6 location12 location02 lhand1 (10000)
+end-pick human1 part6 location12 location02 lhand1 (1)
+end-move robot1 location31 location21 (1)
+start-move human1 location12 location22 (20000)
+end-move human1 location12 location22 (1)
+start-place human1 cab1 location22 location32 part5 rhand1 part5_holder (10000)
+end-place human1 cab1 location22 location32 part5 rhand1 part5_holder (1)
+start-place human1 cab1 location22 location32 part6 lhand1 part6_holder (10000)
+end-place human1 cab1 location22 location32 part6 lhand1 part6_holder (1)
+start-move human1 location22 location23 (20000)
+end-move human1 location22 location23 (1)
+start-move human1 location23 location13 (20000)
+end-move human1 location23 location13 (1)
+start-pick human1 part7 location13 location03 rhand1 (10000)
+end-pick human1 part7 location13 location03 rhand1 (1)
+start-move human1 location13 location12 (20000)
+end-move human1 location13 location12 (1)
+start-move human1 location12 location22 (20000)
+end-move human1 location12 location22 (1)
+start-place human1 cab1 location22 location32 part7 rhand1 part7_holder (10000)
+end-place human1 cab1 location22 location32 part7 rhand1 part7_holder (1)
+start-move robot1 location21 location11 (20000)
+end-move robot1 location21 location11 (1)
+start-move human1 location22 location23 (20000)
+end-move human1 location22 location23 (1)
+start-pick robot1 part2 location11 location01 robothand1 (10000)
+end-pick robot1 part2 location11 location01 robothand1 (1)
+start-move robot1 location11 location12 (20000)
+end-move robot1 location11 location12 (1)
+start-move human1 location23 location13 (20000)
+end-move human1 location23 location13 (1)
+start-move human1 location13 location14 (20000)
+end-move human1 location13 location14 (1)
+start-pick human1 part10 location14 location04 rhand1 (10000)
+end-pick human1 part10 location14 location04 rhand1 (1)
+start-pick human1 part8 location14 location04 lhand1 (10000)
+end-pick human1 part8 location14 location04 lhand1 (1)
+start-move human1 location14 location13 (20000)
+end-move human1 location14 location13 (1)
+start-move human1 location13 location23 (20000)
+end-move human1 location13 location23 (1)
+start-move human1 location23 location33 (20000)
+end-move human1 location23 location33 (1)
+start-place human1 cab1 location33 location32 part8 lhand1 part8_holder (10000)
+end-place human1 cab1 location33 location32 part8 lhand1 part8_holder (1)
+start-place human1 cab1 location33 location32 part10 rhand1 part10_holder (10000)
+end-place human1 cab1 location33 location32 part10 rhand1 part10_holder (1)
+start-move human1 location33 location23 (20000)
+end-move human1 location33 location23 (1)
+start-move human1 location23 location13 (20000)
+end-move human1 location23 location13 (1)
+start-move human1 location13 location14 (20000)
+end-move human1 location13 location14 (1)
+start-pick human1 part9 location14 location04 rhand1 (10000)
+end-pick human1 part9 location14 location04 rhand1 (1)
+start-move human1 location14 location13 (20000)
+end-move human1 location14 location13 (1)
+start-move human1 location13 location23 (20000)
+end-move human1 location13 location23 (1)
+start-move human1 location23 location33 (20000)
+end-move human1 location23 location33 (1)
+start-place human1 cab1 location33 location32 part9 rhand1 part9_holder (10000)
+end-place human1 cab1 location33 location32 part9 rhand1 part9_holder (1)
+start-move robot1 location12 location22 (20000)
+end-move robot1 location12 location22 (1)
+start-place robot1 cab1 location22 location32 part2 robothand1 part2_holder (10000)
+end-place robot1 cab1 location22 location32 part2 robothand1 part2_holder (1)
+start-move robot1 location22 location12 (20000)
+end-move robot1 location22 location12 (1)
+start-move robot1 location12 location11 (20000)
+end-move robot1 location12 location11 (1)
+start-pick robot1 part3 location11 location01 robothand1 (10000)
+end-pick robot1 part3 location11 location01 robothand1 (1)
+start-move robot1 location11 location12 (20000)
+end-move robot1 location11 location12 (1)
+start-move robot1 location12 location22 (20000)
+end-move robot1 location12 location22 (1)
+start-place robot1 cab1 location22 location32 part3 robothand1 part3_holder (10000)
+end-place robot1 cab1 location22 location32 part3 robothand1 part3_holder (1)
+start-move robot1 location22 location12 (20000)
+end-move robot1 location22 location12 (1)
+start-move robot1 location12 location11 (20000)
+end-move robot1 location12 location11 (1)
+start-pick robot1 part4 location11 location01 robothand1 (10000)
+end-pick robot1 part4 location11 location01 robothand1 (1)
+start-move robot1 location11 location12 (20000)
+end-move robot1 location11 location12 (1)
+start-move robot1 location12 location22 (20000)
+end-move robot1 location12 location22 (1)
+start-place robot1 cab1 location22 location32 part4 robothand1 part4_holder (10000)
+end-place robot1 cab1 location22 location32 part4 robothand1 part4_holder (1)
+start-move robot1 location22 location12 (20000)
+end-move robot1 location22 location12 (1)
+start-move robot1 location12 location11 (20000)
+end-move robot1 location12 location11 (1)
+start-move robot1 location11 location10 (20000)
+end-move robot1 location11 location10 (1)
+start-pick robot1 part1 location10 location00 robothand1 (10000)
+end-pick robot1 part1 location10 location00 robothand1 (1)
+start-move robot1 location10 location11 (20000)
+end-move robot1 location10 location11 (1)
+start-move robot1 location11 location12 (20000)
+end-move robot1 location11 location12 (1)
+start-move robot1 location12 location22 (20000)
+end-move robot1 location12 location22 (1)
+start-place robot1 cab1 location22 location32 part1 robothand1 part1_holder (10000)
+end-place robot1 cab1 location22 location32 part1 robothand1 part1_holder (1)
+Plan length: 118 step(s).
+Plan cost: 980059
+Expanded 1319 state(s).
+Reopened 0 state(s).
+Evaluated 1340 state(s).
+Evaluations: 2680
+Generated 5508 state(s).
+Dead ends: 20 state(s).
+Number of registered states: 1340
+Best solution cost so far: 980059
+Solution found - keep searching
+Starting search: tp_lazy_greedy(list(hff2, hlm2), preferred = list(hff2, hlm2), reopen_closed = false)
+Conducting TP lazy best first search, (real) bound = 980059
+New best heuristic value for <missing>: 20
+New best heuristic value for <missing>: 380087
+[g=0, 1 evaluated, 0 expanded, t=1.055s, 21072 KB]
+Initial heuristic value for <missing>: 20
+Initial heuristic value for <missing>: 380087
+New best heuristic value for <missing>: 360084
+[g=20001, 4 evaluated, 3 expanded, t=1.059s, 21072 KB]
+New best heuristic value for <missing>: 340081
+[g=40002, 9 evaluated, 8 expanded, t=1.063s, 21072 KB]
+New best heuristic value for <missing>: 320080
+[g=60002, 11 evaluated, 10 expanded, t=1.063s, 21072 KB]
+New best heuristic value for <missing>: 320078
+[g=60003, 12 evaluated, 11 expanded, t=1.063s, 21072 KB]
+New best heuristic value for <missing>: 300075
+[g=80004, 25 evaluated, 24 expanded, t=1.075s, 21072 KB]
+New best heuristic value for <missing>: 290072
+[g=90005, 38 evaluated, 37 expanded, t=1.091s, 21072 KB]
+New best heuristic value for <missing>: 280069
+[g=100006, 54 evaluated, 53 expanded, t=1.103s, 21072 KB]
+New best heuristic value for <missing>: 18
+[g=120007, 71 evaluated, 70 expanded, t=1.119s, 21072 KB]
+New best heuristic value for <missing>: 270066
+[g=150009, 98 evaluated, 97 expanded, t=1.147s, 21208 KB]
+New best heuristic value for <missing>: 260065
+[g=280015, 198 evaluated, 197 expanded, t=1.227s, 21208 KB]
+New best heuristic value for <missing>: 260063
+[g=280016, 200 evaluated, 199 expanded, t=1.227s, 21208 KB]
+New best heuristic value for <missing>: 250062
+[g=290016, 207 evaluated, 206 expanded, t=1.231s, 21208 KB]
+New best heuristic value for <missing>: 16
+New best heuristic value for <missing>: 250060
+[g=290017, 213 evaluated, 212 expanded, t=1.235s, 21344 KB]
+New best heuristic value for <missing>: 14
+[g=320019, 244 evaluated, 243 expanded, t=1.251s, 21344 KB]
+New best heuristic value for <missing>: 240057
+[g=340020, 247 evaluated, 246 expanded, t=1.255s, 21344 KB]
+New best heuristic value for <missing>: 230056
+[g=450025, 331 evaluated, 330 expanded, t=1.323s, 21344 KB]
+New best heuristic value for <missing>: 230054
+[g=450026, 335 evaluated, 334 expanded, t=1.323s, 21480 KB]
+New best heuristic value for <missing>: 210053
+[g=470026, 336 evaluated, 335 expanded, t=1.323s, 21480 KB]
+New best heuristic value for <missing>: 12
+[g=480028, 347 evaluated, 346 expanded, t=1.331s, 21480 KB]
+New best heuristic value for <missing>: 200050
+[g=500028, 348 evaluated, 347 expanded, t=1.331s, 21480 KB]
+New best heuristic value for <missing>: 200048
+[g=500029, 353 evaluated, 352 expanded, t=1.335s, 21480 KB]
+New best heuristic value for <missing>: 190047
+[g=570032, 502 evaluated, 501 expanded, t=1.426s, 21620 KB]
+New best heuristic value for <missing>: 190045
+[g=570033, 510 evaluated, 509 expanded, t=1.430s, 21620 KB]
+New best heuristic value for <missing>: 11
+[g=620035, 565 evaluated, 564 expanded, t=1.458s, 21620 KB]
+New best heuristic value for <missing>: 180046
+[g=640035, 566 evaluated, 565 expanded, t=1.458s, 21620 KB]
+New best heuristic value for <missing>: 10
+[g=620036, 568 evaluated, 567 expanded, t=1.462s, 21620 KB]
+New best heuristic value for <missing>: 180044
+[g=640036, 569 evaluated, 568 expanded, t=1.462s, 21620 KB]
+New best heuristic value for <missing>: 180042
+[g=660038, 580 evaluated, 579 expanded, t=1.470s, 21756 KB]
+New best heuristic value for <missing>: 170041
+[g=690039, 715 evaluated, 714 expanded, t=1.550s, 21756 KB]
+New best heuristic value for <missing>: 170039
+[g=690040, 718 evaluated, 717 expanded, t=1.550s, 21756 KB]
+New best heuristic value for <missing>: 150038
+[g=710040, 719 evaluated, 718 expanded, t=1.550s, 21756 KB]
+New best heuristic value for <missing>: 140035
+[g=720041, 726 evaluated, 725 expanded, t=1.554s, 21756 KB]
+New best heuristic value for <missing>: 8
+[g=720042, 727 evaluated, 726 expanded, t=1.554s, 21756 KB]
+New best heuristic value for <missing>: 130032
+[g=810046, 773 evaluated, 772 expanded, t=1.574s, 21888 KB]
+New best heuristic value for <missing>: 130030
+[g=810047, 774 evaluated, 773 expanded, t=1.578s, 21888 KB]
+New best heuristic value for <missing>: 120029
+[g=820047, 779 evaluated, 778 expanded, t=1.578s, 21888 KB]
+New best heuristic value for <missing>: 6
+New best heuristic value for <missing>: 120027
+[g=820048, 782 evaluated, 781 expanded, t=1.582s, 21888 KB]
+New best heuristic value for <missing>: 110026
+[g=870050, 794 evaluated, 793 expanded, t=1.590s, 21888 KB]
+New best heuristic value for <missing>: 110024
+[g=870051, 795 evaluated, 794 expanded, t=1.590s, 21888 KB]
+New best heuristic value for <missing>: 100023
+[g=880051, 799 evaluated, 798 expanded, t=1.594s, 21888 KB]
+New best heuristic value for <missing>: 90022
+[g=890051, 801 evaluated, 800 expanded, t=1.598s, 21888 KB]
+New best heuristic value for <missing>: 90020
+[g=890052, 818 evaluated, 817 expanded, t=1.606s, 21888 KB]
+New best heuristic value for <missing>: 90018
+[g=890053, 819 evaluated, 818 expanded, t=1.606s, 21888 KB]
+New best heuristic value for <missing>: 70017
+[g=910053, 820 evaluated, 819 expanded, t=1.606s, 21888 KB]
+New best heuristic value for <missing>: 70015
+[g=910054, 821 evaluated, 820 expanded, t=1.610s, 21888 KB]
+New best heuristic value for <missing>: 50014
+[g=930054, 822 evaluated, 821 expanded, t=1.610s, 21888 KB]
+New best heuristic value for <missing>: 50012
+[g=930055, 823 evaluated, 822 expanded, t=1.610s, 21888 KB]
+New best heuristic value for <missing>: 30011
+[g=950055, 824 evaluated, 823 expanded, t=1.614s, 21888 KB]
+New best heuristic value for <missing>: 30009
+[g=950056, 825 evaluated, 824 expanded, t=1.618s, 22020 KB]
+New best heuristic value for <missing>: 20008
+[g=960056, 826 evaluated, 825 expanded, t=1.618s, 22020 KB]
+New best heuristic value for <missing>: 4
+New best heuristic value for <missing>: 20006
+[g=960057, 827 evaluated, 826 expanded, t=1.618s, 22020 KB]
+New best heuristic value for <missing>: 10005
+[g=970057, 828 evaluated, 827 expanded, t=1.618s, 22020 KB]
+New best heuristic value for <missing>: 2
+New best heuristic value for <missing>: 10003
+[g=970058, 829 evaluated, 828 expanded, t=1.622s, 22020 KB]
+New best heuristic value for <missing>: 2
+[g=980058, 830 evaluated, 829 expanded, t=1.622s, 22020 KB]
+Solution found!
+Actual search time: 2233.784s [t=2234.834s]
+0.000: ( move human1 location30 location20 ) [2.0000]
+2.002: ( move human1 location20 location21 ) [2.0000]
+4.004: ( move human1 location21 location11 ) [2.0000]
+6.006: ( move human1 location11 location12 ) [2.0000]
+8.008: ( pick human1 part6 location12 location02 rhand1 ) [1.0000]
+9.010: ( move human1 location12 location22 ) [2.0000]
+11.012: ( place human1 cab1 location22 location32 part6 rhand1 part6_holder ) [1.0000]
+12.014: ( move human1 location22 location12 ) [2.0000]
+14.016: ( pick human1 part5 location12 location02 lhand1 ) [1.0000]
+15.018: ( move human1 location12 location13 ) [2.0000]
+17.020: ( move human1 location13 location12 ) [2.0000]
+17.022: ( move robot1 location31 location21 ) [2.0000]
+19.024: ( move robot1 location21 location11 ) [2.0000]
+21.026: ( pick robot1 part2 location11 location01 robothand1 ) [1.0000]
+22.028: ( move robot1 location11 location21 ) [2.0000]
+24.030: ( move robot1 location21 location31 ) [2.0000]
+26.032: ( place robot1 cab1 location31 location32 part2 robothand1 part2_holder ) [1.0000]
+27.034: ( move human1 location12 location22 ) [2.0000]
+29.036: ( place human1 cab1 location22 location32 part5 lhand1 part5_holder ) [1.0000]
+30.038: ( move human1 location22 location12 ) [2.0000]
+30.040: ( move robot1 location31 location21 ) [2.0000]
+32.042: ( move robot1 location21 location20 ) [2.0000]
+34.044: ( move robot1 location20 location10 ) [2.0000]
+36.046: ( pick robot1 part1 location10 location00 robothand1 ) [1.0000]
+37.048: ( move robot1 location10 location11 ) [2.0000]
+39.050: ( move robot1 location11 location21 ) [2.0000]
+41.052: ( move human1 location12 location11 ) [2.0000]
+43.054: ( pick human1 part3 location11 location01 rhand1 ) [1.0000]
+44.056: ( move human1 location11 location12 ) [2.0000]
+46.058: ( move human1 location12 location22 ) [2.0000]
+48.060: ( move robot1 location21 location31 ) [2.0000]
+50.062: ( place human1 cab1 location22 location32 part3 rhand1 part3_holder ) [1.0000]
+51.064: ( move human1 location22 location12 ) [2.0000]
+53.066: ( move human1 location12 location11 ) [2.0000]
+55.068: ( pick human1 part4 location11 location01 rhand1 ) [1.0000]
+56.070: ( move human1 location11 location12 ) [2.0000]
+58.072: ( move human1 location12 location22 ) [2.0000]
+60.074: ( place human1 cab1 location22 location32 part4 rhand1 part4_holder ) [1.0000]
+61.076: ( move human1 location22 location23 ) [2.0000]
+63.078: ( move human1 location23 location13 ) [2.0000]
+65.080: ( pick human1 part7 location13 location03 rhand1 ) [1.0000]
+66.082: ( move human1 location13 location12 ) [2.0000]
+68.084: ( move human1 location12 location22 ) [2.0000]
+70.086: ( place human1 cab1 location22 location32 part7 rhand1 part7_holder ) [1.0000]
+71.088: ( move human1 location22 location23 ) [2.0000]
+73.090: ( move human1 location23 location13 ) [2.0000]
+75.092: ( move human1 location13 location14 ) [2.0000]
+77.094: ( pick human1 part10 location14 location04 rhand1 ) [1.0000]
+78.096: ( pick human1 part9 location14 location04 lhand1 ) [1.0000]
+78.098: ( pick human1 part8 location14 location04 lhand1 ) [1.0000]
+79.100: ( move human1 location14 location13 ) [2.0000]
+79.102: ( place robot1 cab1 location31 location32 part1 robothand1 part1_holder ) [1.0000]
+81.102: ( move human1 location13 location12 ) [2.0000]
+83.104: ( move human1 location12 location22 ) [2.0000]
+85.106: ( place human1 cab1 location22 location32 part10 rhand1 part10_holder ) [1.0000]
+86.108: ( place human1 cab1 location22 location32 part8 lhand1 part8_holder ) [1.0000]
+86.110: ( move robot1 location31 location21 ) [2.0000]
+88.112: ( place human1 cab1 location22 location32 part9 lhand1 part9_holder ) [1.0000]
+start-move human1 location30 location20 (20000)
+end-move human1 location30 location20 (1)
+start-move human1 location20 location21 (20000)
+end-move human1 location20 location21 (1)
+start-move human1 location21 location11 (20000)
+end-move human1 location21 location11 (1)
+start-move human1 location11 location12 (20000)
+end-move human1 location11 location12 (1)
+start-pick human1 part6 location12 location02 rhand1 (10000)
+end-pick human1 part6 location12 location02 rhand1 (1)
+start-move human1 location12 location22 (20000)
+end-move human1 location12 location22 (1)
+start-place human1 cab1 location22 location32 part6 rhand1 part6_holder (10000)
+end-place human1 cab1 location22 location32 part6 rhand1 part6_holder (1)
+start-move human1 location22 location12 (20000)
+end-move human1 location22 location12 (1)
+start-pick human1 part5 location12 location02 lhand1 (10000)
+end-pick human1 part5 location12 location02 lhand1 (1)
+start-move human1 location12 location13 (20000)
+end-move human1 location12 location13 (1)
+start-move human1 location13 location12 (20000)
+start-move robot1 location31 location21 (20000)
+end-move human1 location13 location12 (1)
+end-move robot1 location31 location21 (1)
+start-move robot1 location21 location11 (20000)
+end-move robot1 location21 location11 (1)
+start-pick robot1 part2 location11 location01 robothand1 (10000)
+end-pick robot1 part2 location11 location01 robothand1 (1)
+start-move robot1 location11 location21 (20000)
+end-move robot1 location11 location21 (1)
+start-move robot1 location21 location31 (20000)
+end-move robot1 location21 location31 (1)
+start-place robot1 cab1 location31 location32 part2 robothand1 part2_holder (10000)
+end-place robot1 cab1 location31 location32 part2 robothand1 part2_holder (1)
+start-move human1 location12 location22 (20000)
+end-move human1 location12 location22 (1)
+start-place human1 cab1 location22 location32 part5 lhand1 part5_holder (10000)
+end-place human1 cab1 location22 location32 part5 lhand1 part5_holder (1)
+start-move human1 location22 location12 (20000)
+start-move robot1 location31 location21 (20000)
+end-move human1 location22 location12 (1)
+end-move robot1 location31 location21 (1)
+start-move robot1 location21 location20 (20000)
+end-move robot1 location21 location20 (1)
+start-move robot1 location20 location10 (20000)
+end-move robot1 location20 location10 (1)
+start-pick robot1 part1 location10 location00 robothand1 (10000)
+end-pick robot1 part1 location10 location00 robothand1 (1)
+start-move robot1 location10 location11 (20000)
+end-move robot1 location10 location11 (1)
+start-move robot1 location11 location21 (20000)
+end-move robot1 location11 location21 (1)
+start-move human1 location12 location11 (20000)
+end-move human1 location12 location11 (1)
+start-pick human1 part3 location11 location01 rhand1 (10000)
+end-pick human1 part3 location11 location01 rhand1 (1)
+start-move human1 location11 location12 (20000)
+end-move human1 location11 location12 (1)
+start-move human1 location12 location22 (20000)
+end-move human1 location12 location22 (1)
+start-move robot1 location21 location31 (20000)
+end-move robot1 location21 location31 (1)
+start-place human1 cab1 location22 location32 part3 rhand1 part3_holder (10000)
+end-place human1 cab1 location22 location32 part3 rhand1 part3_holder (1)
+start-move human1 location22 location12 (20000)
+end-move human1 location22 location12 (1)
+start-move human1 location12 location11 (20000)
+end-move human1 location12 location11 (1)
+start-pick human1 part4 location11 location01 rhand1 (10000)
+end-pick human1 part4 location11 location01 rhand1 (1)
+start-move human1 location11 location12 (20000)
+end-move human1 location11 location12 (1)
+start-move human1 location12 location22 (20000)
+end-move human1 location12 location22 (1)
+start-place human1 cab1 location22 location32 part4 rhand1 part4_holder (10000)
+end-place human1 cab1 location22 location32 part4 rhand1 part4_holder (1)
+start-move human1 location22 location23 (20000)
+end-move human1 location22 location23 (1)
+start-move human1 location23 location13 (20000)
+end-move human1 location23 location13 (1)
+start-pick human1 part7 location13 location03 rhand1 (10000)
+end-pick human1 part7 location13 location03 rhand1 (1)
+start-move human1 location13 location12 (20000)
+end-move human1 location13 location12 (1)
+start-move human1 location12 location22 (20000)
+end-move human1 location12 location22 (1)
+start-place human1 cab1 location22 location32 part7 rhand1 part7_holder (10000)
+end-place human1 cab1 location22 location32 part7 rhand1 part7_holder (1)
+start-move human1 location22 location23 (20000)
+end-move human1 location22 location23 (1)
+start-move human1 location23 location13 (20000)
+end-move human1 location23 location13 (1)
+start-move human1 location13 location14 (20000)
+end-move human1 location13 location14 (1)
+start-pick human1 part10 location14 location04 rhand1 (10000)
+end-pick human1 part10 location14 location04 rhand1 (1)
+start-pick human1 part9 location14 location04 lhand1 (10000)
+start-pick human1 part8 location14 location04 lhand1 (10000)
+end-pick human1 part9 location14 location04 lhand1 (1)
+end-pick human1 part8 location14 location04 lhand1 (1)
+start-move human1 location14 location13 (20000)
+start-place robot1 cab1 location31 location32 part1 robothand1 part1_holder (10000)
+end-place robot1 cab1 location31 location32 part1 robothand1 part1_holder (1)
+end-move human1 location14 location13 (1)
+start-move human1 location13 location12 (20000)
+end-move human1 location13 location12 (1)
+start-move human1 location12 location22 (20000)
+end-move human1 location12 location22 (1)
+start-place human1 cab1 location22 location32 part10 rhand1 part10_holder (10000)
+end-place human1 cab1 location22 location32 part10 rhand1 part10_holder (1)
+start-place human1 cab1 location22 location32 part8 lhand1 part8_holder (10000)
+start-move robot1 location31 location21 (20000)
+end-place human1 cab1 location22 location32 part8 lhand1 part8_holder (1)
+end-move robot1 location31 location21 (1)
+start-place human1 cab1 location22 location32 part9 lhand1 part9_holder (10000)
+end-place human1 cab1 location22 location32 part9 lhand1 part9_holder (1)
+Plan length: 116 step(s).
+Plan cost: 960058
+Expanded 3973626 state(s).
+Reopened 0 state(s).
+Evaluated 5435287 state(s).
+Evaluations: 10870574
+Generated 17340174 state(s).
+Dead ends: 1461660 state(s).
+Number of registered states: 5436585
+Best solution cost so far: 960058
+Solution found - keep searching
+Actual search time: 2234.628s [t=2234.834s]
+Cumulative statistics:
+Expanded 3974945 state(s).
+Reopened 0 state(s).
+Evaluated 5436627 state(s).
+Evaluations: 10873254
+Generated 17345682 state(s).
+Dead ends: 0 state(s).
+Search time: 2234.628s
+Total time: 2234.834s
+Solution found.
+Peak memory: 3342308 KB
+
