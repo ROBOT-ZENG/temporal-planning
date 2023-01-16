@@ -56,7 +56,7 @@ def runProblemGenerator(inputDomain, inputProblem, inputGenerator, genTempoDomai
         else:
             inputGeneratorCall = "./" + inputGenerator
         generatorCmd = "%s %s %s > %s 2> %s" % (inputGeneratorCall, inputDomain, inputProblem, genTempoDomain, genTempoProblem)
-        print "Executing generator: %s" % (generatorCmd)
+        print("Executing generator: %s", generatorCmd)
         os.system(generatorCmd)
     else:
         copyfile(inputDomain, genTempoDomain)
@@ -76,14 +76,14 @@ def runCompilation(baseFolder, inputPlanner, genTempoDomain, genTempoProblem, ge
         _, bound = inputPlanner.split("-")
         compileCmd = "%s/bin/compileTempoParallel %s %s %s > %s 2> %s" % (baseFolder, genTempoDomain, genTempoProblem, bound, genClassicDomain, genClassicProblem)
 
-    print "Compiling problem: %s" % (compileCmd)
+    print("Compiling problem: %s", compileCmd)
     os.system(compileCmd)
 
 def runFastDownward(baseFolder, inputPlanner, genClassicDomain, genClassicProblem, timeLimit, memoryLimit, iteratedSolution, planFilePrefix):
     fdBuild = getFastDownwardBuildName(baseFolder)
 
     if fdBuild is None:
-        print "Error: No Fast Downward compilation found. Compile Fast Downward before running this script."
+        print("Error: No Fast Downward compilation found. Compile Fast Downward before running this script.")
         exit(-1)
 
     planCmd = None
@@ -102,7 +102,7 @@ def runFastDownward(baseFolder, inputPlanner, genClassicDomain, genClassicProble
     elif inputPlanner.startswith("tempo") or inputPlanner.startswith("stp"):
         planCmd = "python %s/fd_copy/fast-downward.py --build %s --alias tp-lama --overall-time-limit %ss --overall-memory-limit %s --plan-file %s %s %s" % (baseFolder, fdBuild, timeLimit, memoryLimit, planFilePrefix, genClassicDomain, genClassicProblem)
 
-    print "Compiling temporal problem: %s" % (planCmd)
+    print("Compiling temporal problem: %s", planCmd)
     os.system(planCmd)
 
 def transformClassicalSolutions(baseFolder, inputPlanner, genTempoDomain, genClassicDomain, genTempoProblem, iteratedSolution, planFilePrefix):
@@ -110,14 +110,14 @@ def transformClassicalSolutions(baseFolder, inputPlanner, genTempoDomain, genCla
         solFiles = [i for i in os.listdir(".") if i.startswith(planFilePrefix)]
         solFiles.sort(reverse=True)
         if len(solFiles) == 0:
-            print "Error: No solution to be converted into temporal has been found"
+            print("Error: No solution to be converted into temporal has been found")
         else:
             scheduleCmd = None
             if iteratedSolution:
                 for solution in solFiles:
                     _, numSol = solution.split(".")
                     scheduleCmd = "%s/bin/planSchedule %s %s %s %s > tmp_%s.%s" % (baseFolder, genTempoDomain, genClassicDomain, genTempoProblem, solution, planFilePrefix, numSol)
-                    print "Creating temporal plan: %s" % (scheduleCmd)
+                    print("Creating temporal plan: %s", scheduleCmd)
                     os.system(scheduleCmd)
             else:
                 scheduleCmd = "%s/bin/planSchedule %s %s %s %s > tmp_%s" % (baseFolder, genTempoDomain, genClassicDomain, genTempoProblem, solFiles[0], planFilePrefix)
@@ -130,7 +130,7 @@ def runValidator(baseFolder, inputPlanner, genTempoDomain, genTempoProblem, plan
     if existsValidator(validatorBinary):
         lastPlan = getLastPlanFileName(planFilePrefix)
         if lastPlan is None:
-            print "Error: No plan to validate was found"
+            print("Error: No plan to validate was found")
         else:
             timePrecision = 0.001
             if inputPlanner == "she" or inputPlanner == "seq":
@@ -138,10 +138,10 @@ def runValidator(baseFolder, inputPlanner, genTempoDomain, genTempoProblem, plan
             elif inputPlanner.startswith("tempo") or inputPlanner.startswith("stp"):
                 timePrecision = 0.001
             valCmd = "%s -v -t %s %s %s %s > plan.validation" % (validatorBinary, timePrecision, genTempoDomain, genTempoProblem, lastPlan)
-            print "Validating plan: %s" % valCmd
+            print("Validating plan: %s", valCmd)
             os.system(valCmd)
     else:
-        print "Error: Could not find the validator (current path: %s)" % validatorBinary
+        print("Error: Could not find the validator (current path)", validatorBinary)
 
 def runPlanner(baseFolder, inputPlanner, inputDomain, inputProblem,
                timeLimit=defaultTime, memoryLimit=defaultMemory,
@@ -149,7 +149,7 @@ def runPlanner(baseFolder, inputPlanner, inputDomain, inputProblem,
                planFilePrefix=defaultPlanPrefix, validateSolution=defaultValidate):
     ## check if planner is accepted
     if not (inputPlanner == "she" or inputPlanner == "seq" or inputPlanner.startswith("tempo-") or inputPlanner.startswith("stp-")):
-        print "Error: The specified planner '%s' is not recognized" % inputPlanner
+        print("Error: The specified planner '%s' is not recognized", inputPlanner)
         exit(-1)
 
     ## name of input domain and problems to she, tempo

@@ -1,0 +1,1584 @@
+Type-checking load-truck
+...action passes type checking.
+Type-checking unload-truck
+...action passes type checking.
+Type-checking board-truck
+...action passes type checking.
+Type-checking disembark-truck
+...action passes type checking.
+Type-checking drive-truck
+...action passes type checking.
+Type-checking walk
+...action passes type checking.
+Checking plan: tmp_sas_plan.2
+Plan to validate:
+
+Plan size: 180
+0:
+(walk driver8 s11 p11-14) - start
+ 
+20:
+(walk driver8 s11 p11-14) - end
+ 
+20.002:
+(walk driver8 p11-14 s14) - start
+ 
+40.002:
+(walk driver8 p11-14 s14) - end
+ 
+40.004:
+(walk driver4 s4 p4-3) - start
+ 
+60.004:
+(walk driver4 s4 p4-3) - end
+ 
+60.006:
+(walk driver4 p4-3 s3) - start
+ 
+80.006:
+(walk driver4 p4-3 s3) - end
+ 
+80.008:
+(walk driver5 s6 p12-6) - start
+ 
+100.008:
+(walk driver5 s6 p12-6) - end
+ 
+100.01:
+(walk driver5 p12-6 s12) - start
+ 
+120.01:
+(walk driver5 p12-6 s12) - end
+ 
+120.012:
+(board-truck driver2 truck3 s2) - start
+ 
+121.012:
+Invariant for (board-truck driver2 truck3 s2)
+ 
+121.012:
+(board-truck driver2 truck3 s2) - end
+ 
+121.014:
+(drive-truck truck3 s2 s11 driver2) - start
+ 
+131.014:
+Invariant for (drive-truck truck3 s2 s11 driver2)
+ 
+131.014:
+(drive-truck truck3 s2 s11 driver2) - end
+ 
+131.016:
+(drive-truck truck3 s11 s9 driver2) - start
+ 
+141.016:
+Invariant for (drive-truck truck3 s11 s9 driver2)
+ 
+141.016:
+(drive-truck truck3 s11 s9 driver2) - end
+ 
+141.018:
+(disembark-truck driver2 truck3 s9) - start
+ 
+141.02:
+Invariant for (disembark-truck driver2 truck3 s9)
+ 
+141.02:
+(load-truck package7 truck3 s9) - start
+ 
+142.018:
+Invariant for (disembark-truck driver2 truck3 s9)
+Invariant for (load-truck package7 truck3 s9)
+ 
+142.018:
+(disembark-truck driver2 truck3 s9) - end
+ 
+142.022:
+Invariant for (load-truck package7 truck3 s9)
+ 
+142.022:
+(board-truck driver8 truck1 s14) - start
+ 
+143.02:
+Invariant for (load-truck package7 truck3 s9)
+Invariant for (board-truck driver8 truck1 s14)
+ 
+143.02:
+(load-truck package7 truck3 s9) - end
+ 
+143.022:
+Invariant for (board-truck driver8 truck1 s14)
+ 
+143.022:
+(board-truck driver8 truck1 s14) - end
+ 
+143.024:
+(drive-truck truck1 s14 s5 driver8) - start
+ 
+152.026:
+Invariant for (drive-truck truck1 s14 s5 driver8)
+ 
+152.026:
+(board-truck driver2 truck3 s9) - start
+ 
+153.024:
+Invariant for (drive-truck truck1 s14 s5 driver8)
+Invariant for (board-truck driver2 truck3 s9)
+ 
+153.024:
+(drive-truck truck1 s14 s5 driver8) - end
+ 
+153.026:
+Invariant for (board-truck driver2 truck3 s9)
+ 
+153.026:
+(board-truck driver2 truck3 s9) - end
+ 
+153.028:
+(drive-truck truck3 s9 s11 driver2) - start
+ 
+153.03:
+Invariant for (drive-truck truck3 s9 s11 driver2)
+ 
+153.03:
+(load-truck package10 truck1 s5) - start
+ 
+155.03:
+Invariant for (drive-truck truck3 s9 s11 driver2)
+Invariant for (load-truck package10 truck1 s5)
+ 
+155.03:
+(load-truck package10 truck1 s5) - end
+ 
+163.028:
+Invariant for (drive-truck truck3 s9 s11 driver2)
+ 
+163.028:
+(drive-truck truck3 s9 s11 driver2) - end
+ 
+163.03:
+(load-truck package4 truck3 s11) - start
+ 
+165.03:
+Invariant for (load-truck package4 truck3 s11)
+ 
+165.03:
+(load-truck package4 truck3 s11) - end
+ 
+165.032:
+(disembark-truck driver2 truck3 s11) - start
+ 
+165.034:
+Invariant for (disembark-truck driver2 truck3 s11)
+ 
+165.034:
+(drive-truck truck1 s5 s9 driver8) - start
+ 
+166.032:
+Invariant for (disembark-truck driver2 truck3 s11)
+Invariant for (drive-truck truck1 s5 s9 driver8)
+ 
+166.032:
+(disembark-truck driver2 truck3 s11) - end
+ 
+175.034:
+Invariant for (drive-truck truck1 s5 s9 driver8)
+ 
+175.034:
+(drive-truck truck1 s5 s9 driver8) - end
+ 
+175.036:
+(load-truck package8 truck1 s9) - start
+ 
+177.036:
+Invariant for (load-truck package8 truck1 s9)
+ 
+177.036:
+(load-truck package8 truck1 s9) - end
+ 
+177.038:
+(drive-truck truck1 s9 s3 driver8) - start
+ 
+186.042:
+Invariant for (drive-truck truck1 s9 s3 driver8)
+ 
+186.042:
+(board-truck driver2 truck3 s11) - start
+ 
+187.038:
+Invariant for (drive-truck truck1 s9 s3 driver8)
+Invariant for (board-truck driver2 truck3 s11)
+ 
+187.038:
+(drive-truck truck1 s9 s3 driver8) - end
+ 
+187.04:
+Invariant for (board-truck driver2 truck3 s11)
+ 
+187.04:
+(drive-truck truck1 s3 s6 driver8) - start
+ 
+187.042:
+Invariant for (board-truck driver2 truck3 s11)
+Invariant for (drive-truck truck1 s3 s6 driver8)
+ 
+187.042:
+(board-truck driver2 truck3 s11) - end
+ 
+197.04:
+Invariant for (drive-truck truck1 s3 s6 driver8)
+ 
+197.04:
+(drive-truck truck1 s3 s6 driver8) - end
+ 
+197.042:
+(disembark-truck driver8 truck1 s6) - start
+ 
+198.042:
+Invariant for (disembark-truck driver8 truck1 s6)
+ 
+198.042:
+(disembark-truck driver8 truck1 s6) - end
+ 
+198.044:
+(disembark-truck driver2 truck3 s11) - start
+ 
+199.044:
+Invariant for (disembark-truck driver2 truck3 s11)
+ 
+199.044:
+(disembark-truck driver2 truck3 s11) - end
+ 
+199.046:
+(board-truck driver8 truck1 s6) - start
+ 
+200.046:
+Invariant for (board-truck driver8 truck1 s6)
+ 
+200.046:
+(board-truck driver8 truck1 s6) - end
+ 
+200.048:
+(load-truck package2 truck1 s6) - start
+ 
+202.048:
+Invariant for (load-truck package2 truck1 s6)
+ 
+202.048:
+(load-truck package2 truck1 s6) - end
+ 
+202.05:
+(board-truck driver2 truck6 s11) - start
+ 
+202.052:
+Invariant for (board-truck driver2 truck6 s11)
+ 
+202.052:
+(unload-truck package7 truck3 s11) - start
+ 
+203.05:
+Invariant for (board-truck driver2 truck6 s11)
+Invariant for (unload-truck package7 truck3 s11)
+ 
+203.05:
+(board-truck driver2 truck6 s11) - end
+ 
+204.052:
+Invariant for (unload-truck package7 truck3 s11)
+ 
+204.052:
+(unload-truck package7 truck3 s11) - end
+ 
+204.054:
+(unload-truck package4 truck3 s11) - start
+ 
+206.054:
+Invariant for (unload-truck package4 truck3 s11)
+ 
+206.054:
+(unload-truck package4 truck3 s11) - end
+ 
+206.056:
+(load-truck package4 truck6 s11) - start
+ 
+208.056:
+Invariant for (load-truck package4 truck6 s11)
+ 
+208.056:
+(load-truck package4 truck6 s11) - end
+ 
+208.058:
+(disembark-truck driver8 truck1 s6) - start
+ 
+208.06:
+Invariant for (disembark-truck driver8 truck1 s6)
+ 
+208.06:
+(load-truck package7 truck6 s11) - start
+ 
+209.058:
+Invariant for (disembark-truck driver8 truck1 s6)
+Invariant for (load-truck package7 truck6 s11)
+ 
+209.058:
+(disembark-truck driver8 truck1 s6) - end
+ 
+210.06:
+Invariant for (load-truck package7 truck6 s11)
+ 
+210.06:
+(load-truck package7 truck6 s11) - end
+ 
+210.062:
+(board-truck driver8 truck1 s6) - start
+ 
+211.062:
+Invariant for (board-truck driver8 truck1 s6)
+ 
+211.062:
+(board-truck driver8 truck1 s6) - end
+ 
+211.064:
+(drive-truck truck6 s11 s3 driver2) - start
+ 
+221.064:
+Invariant for (drive-truck truck6 s11 s3 driver2)
+ 
+221.064:
+(drive-truck truck6 s11 s3 driver2) - end
+ 
+221.066:
+(unload-truck package4 truck6 s3) - start
+ 
+223.066:
+Invariant for (unload-truck package4 truck6 s3)
+ 
+223.066:
+(unload-truck package4 truck6 s3) - end
+ 
+223.068:
+(unload-truck package7 truck6 s3) - start
+ 
+225.068:
+Invariant for (unload-truck package7 truck6 s3)
+ 
+225.068:
+(unload-truck package7 truck6 s3) - end
+ 
+225.07:
+(drive-truck truck6 s3 s0 driver2) - start
+ 
+235.07:
+Invariant for (drive-truck truck6 s3 s0 driver2)
+ 
+235.07:
+(drive-truck truck6 s3 s0 driver2) - end
+ 
+235.072:
+(drive-truck truck1 s6 s13 driver8) - start
+ 
+245.072:
+Invariant for (drive-truck truck1 s6 s13 driver8)
+ 
+245.072:
+(drive-truck truck1 s6 s13 driver8) - end
+ 
+245.074:
+(load-truck package9 truck1 s13) - start
+ 
+247.074:
+Invariant for (load-truck package9 truck1 s13)
+ 
+247.074:
+(load-truck package9 truck1 s13) - end
+ 
+247.076:
+(drive-truck truck6 s0 s11 driver2) - start
+ 
+247.078:
+Invariant for (drive-truck truck6 s0 s11 driver2)
+ 
+247.078:
+(drive-truck truck1 s13 s6 driver8) - start
+ 
+257.076:
+Invariant for (drive-truck truck6 s0 s11 driver2)
+Invariant for (drive-truck truck1 s13 s6 driver8)
+ 
+257.076:
+(drive-truck truck6 s0 s11 driver2) - end
+ 
+257.078:
+Invariant for (drive-truck truck1 s13 s6 driver8)
+ 
+257.078:
+(drive-truck truck1 s13 s6 driver8) - end
+ 
+257.08:
+(drive-truck truck1 s6 s3 driver8) - start
+ 
+267.08:
+Invariant for (drive-truck truck1 s6 s3 driver8)
+ 
+267.08:
+(drive-truck truck1 s6 s3 driver8) - end
+ 
+267.082:
+(unload-truck package2 truck1 s3) - start
+ 
+269.082:
+Invariant for (unload-truck package2 truck1 s3)
+ 
+269.082:
+(unload-truck package2 truck1 s3) - end
+ 
+269.084:
+(drive-truck truck1 s3 s6 driver8) - start
+ 
+279.084:
+Invariant for (drive-truck truck1 s3 s6 driver8)
+ 
+279.084:
+(drive-truck truck1 s3 s6 driver8) - end
+ 
+279.086:
+(disembark-truck driver8 truck1 s6) - start
+ 
+280.086:
+Invariant for (disembark-truck driver8 truck1 s6)
+ 
+280.086:
+(disembark-truck driver8 truck1 s6) - end
+ 
+280.088:
+(drive-truck truck6 s11 s2 driver2) - start
+ 
+290.088:
+Invariant for (drive-truck truck6 s11 s2 driver2)
+ 
+290.088:
+(drive-truck truck6 s11 s2 driver2) - end
+ 
+290.09:
+(drive-truck truck6 s2 s4 driver2) - start
+ 
+300.09:
+Invariant for (drive-truck truck6 s2 s4 driver2)
+ 
+300.09:
+(drive-truck truck6 s2 s4 driver2) - end
+ 
+300.092:
+(walk driver7 s2 p11-2) - start
+ 
+320.092:
+(walk driver7 s2 p11-2) - end
+ 
+320.094:
+(walk driver7 p11-2 s11) - start
+ 
+340.094:
+(walk driver7 p11-2 s11) - end
+ 
+340.096:
+(board-truck driver7 truck5 s11) - start
+ 
+341.096:
+Invariant for (board-truck driver7 truck5 s11)
+ 
+341.096:
+(board-truck driver7 truck5 s11) - end
+ 
+341.098:
+(drive-truck truck5 s11 s0 driver7) - start
+ 
+351.098:
+Invariant for (drive-truck truck5 s11 s0 driver7)
+ 
+351.098:
+(drive-truck truck5 s11 s0 driver7) - end
+ 
+351.1:
+(board-truck driver8 truck1 s6) - start
+ 
+352.1:
+Invariant for (board-truck driver8 truck1 s6)
+ 
+352.1:
+(board-truck driver8 truck1 s6) - end
+ 
+352.102:
+(drive-truck truck5 s0 s8 driver7) - start
+ 
+362.102:
+Invariant for (drive-truck truck5 s0 s8 driver7)
+ 
+362.102:
+(drive-truck truck5 s0 s8 driver7) - end
+ 
+362.104:
+(load-truck package1 truck5 s8) - start
+ 
+364.104:
+Invariant for (load-truck package1 truck5 s8)
+ 
+364.104:
+(load-truck package1 truck5 s8) - end
+ 
+364.106:
+(load-truck package6 truck5 s8) - start
+ 
+366.106:
+Invariant for (load-truck package6 truck5 s8)
+ 
+366.106:
+(load-truck package6 truck5 s8) - end
+ 
+366.108:
+(drive-truck truck1 s6 s13 driver8) - start
+ 
+376.108:
+Invariant for (drive-truck truck1 s6 s13 driver8)
+ 
+376.108:
+(drive-truck truck1 s6 s13 driver8) - end
+ 
+376.11:
+(drive-truck truck5 s8 s10 driver7) - start
+ 
+386.11:
+Invariant for (drive-truck truck5 s8 s10 driver7)
+ 
+386.11:
+(drive-truck truck5 s8 s10 driver7) - end
+ 
+386.112:
+(unload-truck package1 truck5 s10) - start
+ 
+388.112:
+Invariant for (unload-truck package1 truck5 s10)
+ 
+388.112:
+(unload-truck package1 truck5 s10) - end
+ 
+388.114:
+(drive-truck truck5 s10 s8 driver7) - start
+ 
+398.114:
+Invariant for (drive-truck truck5 s10 s8 driver7)
+ 
+398.114:
+(drive-truck truck5 s10 s8 driver7) - end
+ 
+398.116:
+(drive-truck truck5 s8 s0 driver7) - start
+ 
+400.12:
+Invariant for (drive-truck truck5 s8 s0 driver7)
+ 
+400.12:
+(drive-truck truck1 s13 s7 driver8) - start
+ 
+408.116:
+Invariant for (drive-truck truck5 s8 s0 driver7)
+Invariant for (drive-truck truck1 s13 s7 driver8)
+ 
+408.116:
+(drive-truck truck5 s8 s0 driver7) - end
+ 
+408.118:
+Invariant for (drive-truck truck1 s13 s7 driver8)
+ 
+408.118:
+(unload-truck package6 truck5 s0) - start
+ 
+410.118:
+Invariant for (drive-truck truck1 s13 s7 driver8)
+Invariant for (unload-truck package6 truck5 s0)
+ 
+410.118:
+(unload-truck package6 truck5 s0) - end
+ 
+410.12:
+Invariant for (drive-truck truck1 s13 s7 driver8)
+ 
+410.12:
+(drive-truck truck1 s13 s7 driver8) - end
+ 
+410.122:
+(walk driver1 s1 p1-7) - start
+ 
+430.122:
+(walk driver1 s1 p1-7) - end
+ 
+430.124:
+(walk driver1 p1-7 s7) - start
+ 
+450.124:
+(walk driver1 p1-7 s7) - end
+ 
+450.126:
+(unload-truck package10 truck1 s7) - start
+ 
+452.126:
+Invariant for (unload-truck package10 truck1 s7)
+ 
+452.126:
+(unload-truck package10 truck1 s7) - end
+ 
+452.128:
+(drive-truck truck1 s7 s10 driver8) - start
+ 
+462.128:
+Invariant for (drive-truck truck1 s7 s10 driver8)
+ 
+462.128:
+(drive-truck truck1 s7 s10 driver8) - end
+ 
+462.13:
+(disembark-truck driver8 truck1 s10) - start
+ 
+463.13:
+Invariant for (disembark-truck driver8 truck1 s10)
+ 
+463.13:
+(disembark-truck driver8 truck1 s10) - end
+ 
+463.132:
+(unload-truck package9 truck1 s10) - start
+ 
+465.132:
+Invariant for (unload-truck package9 truck1 s10)
+ 
+465.132:
+(unload-truck package9 truck1 s10) - end
+ 
+465.134:
+(board-truck driver8 truck1 s10) - start
+ 
+466.134:
+Invariant for (board-truck driver8 truck1 s10)
+ 
+466.134:
+(board-truck driver8 truck1 s10) - end
+ 
+466.136:
+(drive-truck truck1 s10 s14 driver8) - start
+ 
+476.136:
+Invariant for (drive-truck truck1 s10 s14 driver8)
+ 
+476.136:
+(drive-truck truck1 s10 s14 driver8) - end
+ 
+476.138:
+(unload-truck package8 truck1 s14) - start
+ 
+478.138:
+Invariant for (unload-truck package8 truck1 s14)
+ 
+478.138:
+(unload-truck package8 truck1 s14) - end
+ 
+478.14:
+(drive-truck truck1 s14 s7 driver8) - start
+ 
+488.14:
+Invariant for (drive-truck truck1 s14 s7 driver8)
+ 
+488.14:
+(drive-truck truck1 s14 s7 driver8) - end
+ 
+488.142:
+(drive-truck truck1 s7 s13 driver8) - start
+ 
+498.142:
+Invariant for (drive-truck truck1 s7 s13 driver8)
+ 
+498.142:
+(drive-truck truck1 s7 s13 driver8) - end
+ 
+498.144:
+(disembark-truck driver8 truck1 s13) - start
+ 
+499.144:
+Invariant for (disembark-truck driver8 truck1 s13)
+ 
+499.144:
+(disembark-truck driver8 truck1 s13) - end
+ 
+499.146:
+(board-truck driver8 truck2 s13) - start
+ 
+500.146:
+Invariant for (board-truck driver8 truck2 s13)
+ 
+500.146:
+(board-truck driver8 truck2 s13) - end
+ 
+500.148:
+(drive-truck truck2 s13 s7 driver8) - start
+ 
+510.148:
+Invariant for (drive-truck truck2 s13 s7 driver8)
+ 
+510.148:
+(drive-truck truck2 s13 s7 driver8) - end
+ 
+510.15:
+(drive-truck truck2 s7 s14 driver8) - start
+ 
+520.15:
+Invariant for (drive-truck truck2 s7 s14 driver8)
+ 
+520.15:
+(drive-truck truck2 s7 s14 driver8) - end
+ 
+520.152:
+(disembark-truck driver8 truck2 s14) - start
+ 
+521.152:
+Invariant for (disembark-truck driver8 truck2 s14)
+ 
+521.152:
+(disembark-truck driver8 truck2 s14) - end
+ 
+521.154:
+(disembark-truck driver7 truck5 s0) - start
+ 
+522.154:
+Invariant for (disembark-truck driver7 truck5 s0)
+ 
+522.154:
+(disembark-truck driver7 truck5 s0) - end
+ 
+522.156:
+(walk driver7 s0 p13-0) - start
+ 
+542.156:
+(walk driver7 s0 p13-0) - end
+ 
+542.158:
+(walk driver7 p13-0 s13) - start
+ 
+562.158:
+(walk driver7 p13-0 s13) - end
+ 
+562.16:
+(board-truck driver7 truck1 s13) - start
+ 
+563.16:
+Invariant for (board-truck driver7 truck1 s13)
+ 
+563.16:
+(board-truck driver7 truck1 s13) - end
+ 
+563.162:
+(drive-truck truck1 s13 s7 driver7) - start
+ 
+573.162:
+Invariant for (drive-truck truck1 s13 s7 driver7)
+ 
+573.162:
+(drive-truck truck1 s13 s7 driver7) - end
+ 
+573.164:
+(disembark-truck driver7 truck1 s7) - start
+ 
+574.164:
+Invariant for (disembark-truck driver7 truck1 s7)
+ 
+574.164:
+(disembark-truck driver7 truck1 s7) - end
+ 
+574.166:
+(board-truck driver1 truck1 s7) - start
+ 
+575.166:
+Invariant for (board-truck driver1 truck1 s7)
+ 
+575.166:
+(board-truck driver1 truck1 s7) - end
+ 
+575.168:
+(drive-truck truck1 s7 s6 driver1) - start
+ 
+585.168:
+Invariant for (drive-truck truck1 s7 s6 driver1)
+ 
+585.168:
+(drive-truck truck1 s7 s6 driver1) - end
+ 
+585.17:
+(disembark-truck driver1 truck1 s6) - start
+ 
+586.17:
+Invariant for (disembark-truck driver1 truck1 s6)
+ 
+586.17:
+(disembark-truck driver1 truck1 s6) - end
+ 
+586.172:
+(walk driver1 s6 p13-6) - start
+ 
+606.172:
+(walk driver1 s6 p13-6) - end
+ 
+606.174:
+(walk driver1 p13-6 s13) - start
+ 
+626.174:
+(walk driver1 p13-6 s13) - end
+ 
+
+Plan Validation details
+-----------------------
+
+Checking next happening (time 0)
+Deleting (at driver8 s11)
+
+Checking next happening (time 20)
+Adding (at driver8 p11-14)
+
+Checking next happening (time 20.002)
+Deleting (at driver8 p11-14)
+
+Checking next happening (time 40.002)
+Adding (at driver8 s14)
+
+Checking next happening (time 40.004)
+Deleting (at driver4 s4)
+
+Checking next happening (time 60.004)
+Adding (at driver4 p4-3)
+
+Checking next happening (time 60.006)
+Deleting (at driver4 p4-3)
+
+Checking next happening (time 80.006)
+Adding (at driver4 s3)
+
+Checking next happening (time 80.008)
+Deleting (at driver5 s6)
+
+Checking next happening (time 100.008)
+Adding (at driver5 p12-6)
+
+Checking next happening (time 100.01)
+Deleting (at driver5 p12-6)
+
+Checking next happening (time 120.01)
+Adding (at driver5 s12)
+
+Checking next happening (time 120.012)
+Deleting (at driver2 s2)
+Deleting (empty truck3)
+
+Checking next happening (time 121.012)
+
+Checking next happening (time 121.012)
+Adding (driving driver2 truck3)
+
+Checking next happening (time 121.014)
+Deleting (at truck3 s2)
+
+Checking next happening (time 131.014)
+
+Checking next happening (time 131.014)
+Adding (at truck3 s11)
+
+Checking next happening (time 131.016)
+Deleting (at truck3 s11)
+
+Checking next happening (time 141.016)
+
+Checking next happening (time 141.016)
+Adding (at truck3 s9)
+
+Checking next happening (time 141.018)
+Deleting (driving driver2 truck3)
+
+Checking next happening (time 141.02)
+
+Checking next happening (time 141.02)
+Deleting (at package7 s9)
+
+Checking next happening (time 142.018)
+
+Checking next happening (time 142.018)
+Adding (at driver2 s9)
+Adding (empty truck3)
+
+Checking next happening (time 142.022)
+
+Checking next happening (time 142.022)
+Deleting (at driver8 s14)
+Deleting (empty truck1)
+
+Checking next happening (time 143.02)
+
+Checking next happening (time 143.02)
+Adding (in package7 truck3)
+
+Checking next happening (time 143.022)
+
+Checking next happening (time 143.022)
+Adding (driving driver8 truck1)
+
+Checking next happening (time 143.024)
+Deleting (at truck1 s14)
+
+Checking next happening (time 152.026)
+
+Checking next happening (time 152.026)
+Deleting (at driver2 s9)
+Deleting (empty truck3)
+
+Checking next happening (time 153.024)
+
+Checking next happening (time 153.024)
+Adding (at truck1 s5)
+
+Checking next happening (time 153.026)
+
+Checking next happening (time 153.026)
+Adding (driving driver2 truck3)
+
+Checking next happening (time 153.028)
+Deleting (at truck3 s9)
+
+Checking next happening (time 153.03)
+
+Checking next happening (time 153.03)
+Deleting (at package10 s5)
+
+Checking next happening (time 155.03)
+
+Checking next happening (time 155.03)
+Adding (in package10 truck1)
+
+Checking next happening (time 163.028)
+
+Checking next happening (time 163.028)
+Adding (at truck3 s11)
+
+Checking next happening (time 163.03)
+Deleting (at package4 s11)
+
+Checking next happening (time 165.03)
+
+Checking next happening (time 165.03)
+Adding (in package4 truck3)
+
+Checking next happening (time 165.032)
+Deleting (driving driver2 truck3)
+
+Checking next happening (time 165.034)
+
+Checking next happening (time 165.034)
+Deleting (at truck1 s5)
+
+Checking next happening (time 166.032)
+
+Checking next happening (time 166.032)
+Adding (at driver2 s11)
+Adding (empty truck3)
+
+Checking next happening (time 175.034)
+
+Checking next happening (time 175.034)
+Adding (at truck1 s9)
+
+Checking next happening (time 175.036)
+Deleting (at package8 s9)
+
+Checking next happening (time 177.036)
+
+Checking next happening (time 177.036)
+Adding (in package8 truck1)
+
+Checking next happening (time 177.038)
+Deleting (at truck1 s9)
+
+Checking next happening (time 186.042)
+
+Checking next happening (time 186.042)
+Deleting (at driver2 s11)
+Deleting (empty truck3)
+
+Checking next happening (time 187.038)
+
+Checking next happening (time 187.038)
+Adding (at truck1 s3)
+
+Checking next happening (time 187.04)
+
+Checking next happening (time 187.04)
+Deleting (at truck1 s3)
+
+Checking next happening (time 187.042)
+
+Checking next happening (time 187.042)
+Adding (driving driver2 truck3)
+
+Checking next happening (time 197.04)
+
+Checking next happening (time 197.04)
+Adding (at truck1 s6)
+
+Checking next happening (time 197.042)
+Deleting (driving driver8 truck1)
+
+Checking next happening (time 198.042)
+
+Checking next happening (time 198.042)
+Adding (at driver8 s6)
+Adding (empty truck1)
+
+Checking next happening (time 198.044)
+Deleting (driving driver2 truck3)
+
+Checking next happening (time 199.044)
+
+Checking next happening (time 199.044)
+Adding (at driver2 s11)
+Adding (empty truck3)
+
+Checking next happening (time 199.046)
+Deleting (at driver8 s6)
+Deleting (empty truck1)
+
+Checking next happening (time 200.046)
+
+Checking next happening (time 200.046)
+Adding (driving driver8 truck1)
+
+Checking next happening (time 200.048)
+Deleting (at package2 s6)
+
+Checking next happening (time 202.048)
+
+Checking next happening (time 202.048)
+Adding (in package2 truck1)
+
+Checking next happening (time 202.05)
+Deleting (at driver2 s11)
+Deleting (empty truck6)
+
+Checking next happening (time 202.052)
+
+Checking next happening (time 202.052)
+Deleting (in package7 truck3)
+
+Checking next happening (time 203.05)
+
+Checking next happening (time 203.05)
+Adding (driving driver2 truck6)
+
+Checking next happening (time 204.052)
+
+Checking next happening (time 204.052)
+Adding (at package7 s11)
+
+Checking next happening (time 204.054)
+Deleting (in package4 truck3)
+
+Checking next happening (time 206.054)
+
+Checking next happening (time 206.054)
+Adding (at package4 s11)
+
+Checking next happening (time 206.056)
+Deleting (at package4 s11)
+
+Checking next happening (time 208.056)
+
+Checking next happening (time 208.056)
+Adding (in package4 truck6)
+
+Checking next happening (time 208.058)
+Deleting (driving driver8 truck1)
+
+Checking next happening (time 208.06)
+
+Checking next happening (time 208.06)
+Deleting (at package7 s11)
+
+Checking next happening (time 209.058)
+
+Checking next happening (time 209.058)
+Adding (at driver8 s6)
+Adding (empty truck1)
+
+Checking next happening (time 210.06)
+
+Checking next happening (time 210.06)
+Adding (in package7 truck6)
+
+Checking next happening (time 210.062)
+Deleting (at driver8 s6)
+Deleting (empty truck1)
+
+Checking next happening (time 211.062)
+
+Checking next happening (time 211.062)
+Adding (driving driver8 truck1)
+
+Checking next happening (time 211.064)
+Deleting (at truck6 s11)
+
+Checking next happening (time 221.064)
+
+Checking next happening (time 221.064)
+Adding (at truck6 s3)
+
+Checking next happening (time 221.066)
+Deleting (in package4 truck6)
+
+Checking next happening (time 223.066)
+
+Checking next happening (time 223.066)
+Adding (at package4 s3)
+
+Checking next happening (time 223.068)
+Deleting (in package7 truck6)
+
+Checking next happening (time 225.068)
+
+Checking next happening (time 225.068)
+Adding (at package7 s3)
+
+Checking next happening (time 225.07)
+Deleting (at truck6 s3)
+
+Checking next happening (time 235.07)
+
+Checking next happening (time 235.07)
+Adding (at truck6 s0)
+
+Checking next happening (time 235.072)
+Deleting (at truck1 s6)
+
+Checking next happening (time 245.072)
+
+Checking next happening (time 245.072)
+Adding (at truck1 s13)
+
+Checking next happening (time 245.074)
+Deleting (at package9 s13)
+
+Checking next happening (time 247.074)
+
+Checking next happening (time 247.074)
+Adding (in package9 truck1)
+
+Checking next happening (time 247.076)
+Deleting (at truck6 s0)
+
+Checking next happening (time 247.078)
+
+Checking next happening (time 247.078)
+Deleting (at truck1 s13)
+
+Checking next happening (time 257.076)
+
+Checking next happening (time 257.076)
+Adding (at truck6 s11)
+
+Checking next happening (time 257.078)
+
+Checking next happening (time 257.078)
+Adding (at truck1 s6)
+
+Checking next happening (time 257.08)
+Deleting (at truck1 s6)
+
+Checking next happening (time 267.08)
+
+Checking next happening (time 267.08)
+Adding (at truck1 s3)
+
+Checking next happening (time 267.082)
+Deleting (in package2 truck1)
+
+Checking next happening (time 269.082)
+
+Checking next happening (time 269.082)
+Adding (at package2 s3)
+
+Checking next happening (time 269.084)
+Deleting (at truck1 s3)
+
+Checking next happening (time 279.084)
+
+Checking next happening (time 279.084)
+Adding (at truck1 s6)
+
+Checking next happening (time 279.086)
+Deleting (driving driver8 truck1)
+
+Checking next happening (time 280.086)
+
+Checking next happening (time 280.086)
+Adding (at driver8 s6)
+Adding (empty truck1)
+
+Checking next happening (time 280.088)
+Deleting (at truck6 s11)
+
+Checking next happening (time 290.088)
+
+Checking next happening (time 290.088)
+Adding (at truck6 s2)
+
+Checking next happening (time 290.09)
+Deleting (at truck6 s2)
+
+Checking next happening (time 300.09)
+
+Checking next happening (time 300.09)
+Adding (at truck6 s4)
+
+Checking next happening (time 300.092)
+Deleting (at driver7 s2)
+
+Checking next happening (time 320.092)
+Adding (at driver7 p11-2)
+
+Checking next happening (time 320.094)
+Deleting (at driver7 p11-2)
+
+Checking next happening (time 340.094)
+Adding (at driver7 s11)
+
+Checking next happening (time 340.096)
+Deleting (at driver7 s11)
+Deleting (empty truck5)
+
+Checking next happening (time 341.096)
+
+Checking next happening (time 341.096)
+Adding (driving driver7 truck5)
+
+Checking next happening (time 341.098)
+Deleting (at truck5 s11)
+
+Checking next happening (time 351.098)
+
+Checking next happening (time 351.098)
+Adding (at truck5 s0)
+
+Checking next happening (time 351.1)
+Deleting (at driver8 s6)
+Deleting (empty truck1)
+
+Checking next happening (time 352.1)
+
+Checking next happening (time 352.1)
+Adding (driving driver8 truck1)
+
+Checking next happening (time 352.102)
+Deleting (at truck5 s0)
+
+Checking next happening (time 362.102)
+
+Checking next happening (time 362.102)
+Adding (at truck5 s8)
+
+Checking next happening (time 362.104)
+Deleting (at package1 s8)
+
+Checking next happening (time 364.104)
+
+Checking next happening (time 364.104)
+Adding (in package1 truck5)
+
+Checking next happening (time 364.106)
+Deleting (at package6 s8)
+
+Checking next happening (time 366.106)
+
+Checking next happening (time 366.106)
+Adding (in package6 truck5)
+
+Checking next happening (time 366.108)
+Deleting (at truck1 s6)
+
+Checking next happening (time 376.108)
+
+Checking next happening (time 376.108)
+Adding (at truck1 s13)
+
+Checking next happening (time 376.11)
+Deleting (at truck5 s8)
+
+Checking next happening (time 386.11)
+
+Checking next happening (time 386.11)
+Adding (at truck5 s10)
+
+Checking next happening (time 386.112)
+Deleting (in package1 truck5)
+
+Checking next happening (time 388.112)
+
+Checking next happening (time 388.112)
+Adding (at package1 s10)
+
+Checking next happening (time 388.114)
+Deleting (at truck5 s10)
+
+Checking next happening (time 398.114)
+
+Checking next happening (time 398.114)
+Adding (at truck5 s8)
+
+Checking next happening (time 398.116)
+Deleting (at truck5 s8)
+
+Checking next happening (time 400.12)
+
+Checking next happening (time 400.12)
+Deleting (at truck1 s13)
+
+Checking next happening (time 408.116)
+
+Checking next happening (time 408.116)
+Adding (at truck5 s0)
+
+Checking next happening (time 408.118)
+
+Checking next happening (time 408.118)
+Deleting (in package6 truck5)
+
+Checking next happening (time 410.118)
+
+Checking next happening (time 410.118)
+Adding (at package6 s0)
+
+Checking next happening (time 410.12)
+
+Checking next happening (time 410.12)
+Adding (at truck1 s7)
+
+Checking next happening (time 410.122)
+Deleting (at driver1 s1)
+
+Checking next happening (time 430.122)
+Adding (at driver1 p1-7)
+
+Checking next happening (time 430.124)
+Deleting (at driver1 p1-7)
+
+Checking next happening (time 450.124)
+Adding (at driver1 s7)
+
+Checking next happening (time 450.126)
+Deleting (in package10 truck1)
+
+Checking next happening (time 452.126)
+
+Checking next happening (time 452.126)
+Adding (at package10 s7)
+
+Checking next happening (time 452.128)
+Deleting (at truck1 s7)
+
+Checking next happening (time 462.128)
+
+Checking next happening (time 462.128)
+Adding (at truck1 s10)
+
+Checking next happening (time 462.13)
+Deleting (driving driver8 truck1)
+
+Checking next happening (time 463.13)
+
+Checking next happening (time 463.13)
+Adding (at driver8 s10)
+Adding (empty truck1)
+
+Checking next happening (time 463.132)
+Deleting (in package9 truck1)
+
+Checking next happening (time 465.132)
+
+Checking next happening (time 465.132)
+Adding (at package9 s10)
+
+Checking next happening (time 465.134)
+Deleting (at driver8 s10)
+Deleting (empty truck1)
+
+Checking next happening (time 466.134)
+
+Checking next happening (time 466.134)
+Adding (driving driver8 truck1)
+
+Checking next happening (time 466.136)
+Deleting (at truck1 s10)
+
+Checking next happening (time 476.136)
+
+Checking next happening (time 476.136)
+Adding (at truck1 s14)
+
+Checking next happening (time 476.138)
+Deleting (in package8 truck1)
+
+Checking next happening (time 478.138)
+
+Checking next happening (time 478.138)
+Adding (at package8 s14)
+
+Checking next happening (time 478.14)
+Deleting (at truck1 s14)
+
+Checking next happening (time 488.14)
+
+Checking next happening (time 488.14)
+Adding (at truck1 s7)
+
+Checking next happening (time 488.142)
+Deleting (at truck1 s7)
+
+Checking next happening (time 498.142)
+
+Checking next happening (time 498.142)
+Adding (at truck1 s13)
+
+Checking next happening (time 498.144)
+Deleting (driving driver8 truck1)
+
+Checking next happening (time 499.144)
+
+Checking next happening (time 499.144)
+Adding (at driver8 s13)
+Adding (empty truck1)
+
+Checking next happening (time 499.146)
+Deleting (at driver8 s13)
+Deleting (empty truck2)
+
+Checking next happening (time 500.146)
+
+Checking next happening (time 500.146)
+Adding (driving driver8 truck2)
+
+Checking next happening (time 500.148)
+Deleting (at truck2 s13)
+
+Checking next happening (time 510.148)
+
+Checking next happening (time 510.148)
+Adding (at truck2 s7)
+
+Checking next happening (time 510.15)
+Deleting (at truck2 s7)
+
+Checking next happening (time 520.15)
+
+Checking next happening (time 520.15)
+Adding (at truck2 s14)
+
+Checking next happening (time 520.152)
+Deleting (driving driver8 truck2)
+
+Checking next happening (time 521.152)
+
+Checking next happening (time 521.152)
+Adding (at driver8 s14)
+Adding (empty truck2)
+
+Checking next happening (time 521.154)
+Deleting (driving driver7 truck5)
+
+Checking next happening (time 522.154)
+
+Checking next happening (time 522.154)
+Adding (at driver7 s0)
+Adding (empty truck5)
+
+Checking next happening (time 522.156)
+Deleting (at driver7 s0)
+
+Checking next happening (time 542.156)
+Adding (at driver7 p13-0)
+
+Checking next happening (time 542.158)
+Deleting (at driver7 p13-0)
+
+Checking next happening (time 562.158)
+Adding (at driver7 s13)
+
+Checking next happening (time 562.16)
+Deleting (at driver7 s13)
+Deleting (empty truck1)
+
+Checking next happening (time 563.16)
+
+Checking next happening (time 563.16)
+Adding (driving driver7 truck1)
+
+Checking next happening (time 563.162)
+Deleting (at truck1 s13)
+
+Checking next happening (time 573.162)
+
+Checking next happening (time 573.162)
+Adding (at truck1 s7)
+
+Checking next happening (time 573.164)
+Deleting (driving driver7 truck1)
+
+Checking next happening (time 574.164)
+
+Checking next happening (time 574.164)
+Adding (at driver7 s7)
+Adding (empty truck1)
+
+Checking next happening (time 574.166)
+Deleting (at driver1 s7)
+Deleting (empty truck1)
+
+Checking next happening (time 575.166)
+
+Checking next happening (time 575.166)
+Adding (driving driver1 truck1)
+
+Checking next happening (time 575.168)
+Deleting (at truck1 s7)
+
+Checking next happening (time 585.168)
+
+Checking next happening (time 585.168)
+Adding (at truck1 s6)
+
+Checking next happening (time 585.17)
+Deleting (driving driver1 truck1)
+
+Checking next happening (time 586.17)
+
+Checking next happening (time 586.17)
+Adding (at driver1 s6)
+Adding (empty truck1)
+
+Checking next happening (time 586.172)
+Deleting (at driver1 s6)
+
+Checking next happening (time 606.172)
+Adding (at driver1 p13-6)
+
+Checking next happening (time 606.174)
+Deleting (at driver1 p13-6)
+
+Checking next happening (time 626.174)
+Adding (at driver1 s13)
+Plan executed successfully - checking goal
+Plan valid
+Final value: 626.174 
+
+Successful plans:
+Value: 626.174
+ tmp_sas_plan.2 626.174 
+
