@@ -1,1143 +1,1739 @@
-Type-checking move
+Type-checking load-truck
 ...action passes type checking.
-Type-checking pick
+Type-checking unload-truck
 ...action passes type checking.
-Type-checking place
+Type-checking board-truck
+...action passes type checking.
+Type-checking disembark-truck
+...action passes type checking.
+Type-checking drive-truck
+...action passes type checking.
+Type-checking walk
 ...action passes type checking.
 Checking plan: tmp_sas_plan.2
 Plan to validate:
 
-Plan size: 116
+Plan size: 190
 0:
-(move human1 location30 location20) - start
+(board-truck driver2 truck2 s1) - start
  
-2:
-Invariant for (move human1 location30 location20)
+0.002:
+Invariant for (board-truck driver2 truck2 s1)
  
-2:
-(move human1 location30 location20) - end
+0.002:
+(load-truck package10 truck2 s1) - start
+ 
+1:
+Invariant for (board-truck driver2 truck2 s1)
+Invariant for (load-truck package10 truck2 s1)
+ 
+1:
+(board-truck driver2 truck2 s1) - end
  
 2.002:
-(move human1 location20 location21) - start
+Invariant for (load-truck package10 truck2 s1)
  
-4.002:
-Invariant for (move human1 location20 location21)
+2.002:
+(load-truck package10 truck2 s1) - end
  
-4.002:
-(move human1 location20 location21) - end
+2.004:
+(board-truck driver1 truck3 s9) - start
  
-4.004:
-(move human1 location21 location11) - start
+3.004:
+Invariant for (board-truck driver1 truck3 s9)
  
-6.004:
-Invariant for (move human1 location21 location11)
+3.004:
+(board-truck driver1 truck3 s9) - end
  
-6.004:
-(move human1 location21 location11) - end
+3.006:
+(drive-truck truck3 s9 s5 driver1) - start
  
-6.006:
-(move human1 location11 location12) - start
+13.006:
+Invariant for (drive-truck truck3 s9 s5 driver1)
  
-8.006:
-Invariant for (move human1 location11 location12)
+13.006:
+(drive-truck truck3 s9 s5 driver1) - end
  
-8.006:
-(move human1 location11 location12) - end
+13.008:
+(drive-truck truck2 s1 s8 driver2) - start
  
-8.008:
-(pick human1 part6 location12 location02 rhand1) - start
+13.01:
+Invariant for (drive-truck truck2 s1 s8 driver2)
  
-9.008:
-Invariant for (pick human1 part6 location12 location02 rhand1)
+13.01:
+(drive-truck truck3 s5 s2 driver1) - start
  
-9.008:
-(pick human1 part6 location12 location02 rhand1) - end
+23.008:
+Invariant for (drive-truck truck2 s1 s8 driver2)
+Invariant for (drive-truck truck3 s5 s2 driver1)
  
-9.01:
-(move human1 location12 location22) - start
+23.008:
+(drive-truck truck2 s1 s8 driver2) - end
  
-11.01:
-Invariant for (move human1 location12 location22)
+23.01:
+Invariant for (drive-truck truck3 s5 s2 driver1)
  
-11.01:
-(move human1 location12 location22) - end
+23.01:
+(drive-truck truck3 s5 s2 driver1) - end
  
-11.012:
-(place human1 cab1 location22 location32 part6 rhand1 part6_holder) - start
+23.012:
+(disembark-truck driver2 truck2 s8) - start
  
-12.012:
-Invariant for (place human1 cab1 location22 location32 part6 rhand1 part6_holder)
+23.014:
+Invariant for (disembark-truck driver2 truck2 s8)
  
-12.012:
-(place human1 cab1 location22 location32 part6 rhand1 part6_holder) - end
+23.014:
+(unload-truck package10 truck2 s8) - start
  
-12.014:
-(move human1 location22 location12) - start
+24.012:
+Invariant for (disembark-truck driver2 truck2 s8)
+Invariant for (unload-truck package10 truck2 s8)
  
-14.014:
-Invariant for (move human1 location22 location12)
+24.012:
+(disembark-truck driver2 truck2 s8) - end
  
-14.014:
-(move human1 location22 location12) - end
+25.014:
+Invariant for (unload-truck package10 truck2 s8)
  
-14.016:
-(pick human1 part5 location12 location02 lhand1) - start
+25.014:
+(unload-truck package10 truck2 s8) - end
  
-15.016:
-Invariant for (pick human1 part5 location12 location02 lhand1)
+25.016:
+(load-truck package6 truck3 s2) - start
  
-15.016:
-(pick human1 part5 location12 location02 lhand1) - end
+26.018:
+Invariant for (load-truck package6 truck3 s2)
  
-15.018:
-(move human1 location12 location13) - start
+26.018:
+(board-truck driver2 truck5 s8) - start
  
-17.018:
-Invariant for (move human1 location12 location13)
+27.016:
+Invariant for (load-truck package6 truck3 s2)
+Invariant for (board-truck driver2 truck5 s8)
  
-17.018:
-(move human1 location12 location13) - end
+27.016:
+(load-truck package6 truck3 s2) - end
  
-17.02:
-(move human1 location13 location12) - start
+27.018:
+Invariant for (board-truck driver2 truck5 s8)
  
-17.022:
-Invariant for (move human1 location13 location12)
+27.018:
+(board-truck driver2 truck5 s8) - end
  
-17.022:
-(move robot1 location31 location21) - start
+27.02:
+(drive-truck truck3 s2 s1 driver1) - start
  
-19.02:
-Invariant for (move human1 location13 location12)
-Invariant for (move robot1 location31 location21)
+27.022:
+Invariant for (drive-truck truck3 s2 s1 driver1)
  
-19.02:
-(move human1 location13 location12) - end
+27.022:
+(drive-truck truck5 s8 s3 driver2) - start
  
-19.022:
-Invariant for (move robot1 location31 location21)
+37.02:
+Invariant for (drive-truck truck3 s2 s1 driver1)
+Invariant for (drive-truck truck5 s8 s3 driver2)
  
-19.022:
-(move robot1 location31 location21) - end
+37.02:
+(drive-truck truck3 s2 s1 driver1) - end
  
-19.024:
-(move robot1 location21 location11) - start
+37.022:
+Invariant for (drive-truck truck5 s8 s3 driver2)
  
-21.024:
-Invariant for (move robot1 location21 location11)
+37.022:
+(drive-truck truck5 s8 s3 driver2) - end
  
-21.024:
-(move robot1 location21 location11) - end
+37.024:
+(drive-truck truck5 s3 s0 driver2) - start
  
-21.026:
-(pick robot1 part2 location11 location01 robothand1) - start
+47.024:
+Invariant for (drive-truck truck5 s3 s0 driver2)
  
-22.026:
-Invariant for (pick robot1 part2 location11 location01 robothand1)
+47.024:
+(drive-truck truck5 s3 s0 driver2) - end
  
-22.026:
-(pick robot1 part2 location11 location01 robothand1) - end
+47.026:
+(load-truck package4 truck5 s0) - start
  
-22.028:
-(move robot1 location11 location21) - start
+48.03:
+Invariant for (load-truck package4 truck5 s0)
  
-24.028:
-Invariant for (move robot1 location11 location21)
+48.03:
+(disembark-truck driver2 truck5 s0) - start
  
-24.028:
-(move robot1 location11 location21) - end
+49.026:
+Invariant for (load-truck package4 truck5 s0)
+Invariant for (disembark-truck driver2 truck5 s0)
  
-24.03:
-(move robot1 location21 location31) - start
+49.026:
+(load-truck package4 truck5 s0) - end
  
-26.03:
-Invariant for (move robot1 location21 location31)
+49.028:
+Invariant for (disembark-truck driver2 truck5 s0)
  
-26.03:
-(move robot1 location21 location31) - end
+49.028:
+(unload-truck package6 truck3 s1) - start
  
-26.032:
-(place robot1 cab1 location31 location32 part2 robothand1 part2_holder) - start
+49.03:
+Invariant for (disembark-truck driver2 truck5 s0)
+Invariant for (unload-truck package6 truck3 s1)
  
-27.032:
-Invariant for (place robot1 cab1 location31 location32 part2 robothand1 part2_holder)
+49.03:
+(disembark-truck driver2 truck5 s0) - end
  
-27.032:
-(place robot1 cab1 location31 location32 part2 robothand1 part2_holder) - end
+51.028:
+Invariant for (unload-truck package6 truck3 s1)
  
-27.034:
-(move human1 location12 location22) - start
+51.028:
+(unload-truck package6 truck3 s1) - end
  
-29.034:
-Invariant for (move human1 location12 location22)
+51.03:
+(drive-truck truck3 s1 s2 driver1) - start
  
-29.034:
-(move human1 location12 location22) - end
+61.03:
+Invariant for (drive-truck truck3 s1 s2 driver1)
  
-29.036:
-(place human1 cab1 location22 location32 part5 lhand1 part5_holder) - start
+61.03:
+(drive-truck truck3 s1 s2 driver1) - end
  
-30.036:
-Invariant for (place human1 cab1 location22 location32 part5 lhand1 part5_holder)
+61.032:
+(drive-truck truck3 s2 s5 driver1) - start
  
-30.036:
-(place human1 cab1 location22 location32 part5 lhand1 part5_holder) - end
+71.032:
+Invariant for (drive-truck truck3 s2 s5 driver1)
  
-30.038:
-(move human1 location22 location12) - start
+71.032:
+(drive-truck truck3 s2 s5 driver1) - end
  
-30.04:
-Invariant for (move human1 location22 location12)
+71.034:
+(walk driver5 s3 p3-8) - start
  
-30.04:
-(move robot1 location31 location21) - start
+91.034:
+(walk driver5 s3 p3-8) - end
  
-32.038:
-Invariant for (move human1 location22 location12)
-Invariant for (move robot1 location31 location21)
+91.036:
+(walk driver5 p3-8 s8) - start
  
-32.038:
-(move human1 location22 location12) - end
+91.038:
+(board-truck driver2 truck5 s0) - start
  
-32.04:
-Invariant for (move robot1 location31 location21)
+92.038:
+Invariant for (board-truck driver2 truck5 s0)
  
-32.04:
-(move robot1 location31 location21) - end
+92.038:
+(board-truck driver2 truck5 s0) - end
  
-32.042:
-(move robot1 location21 location20) - start
+111.036:
+(walk driver5 p3-8 s8) - end
  
-34.042:
-Invariant for (move robot1 location21 location20)
+111.038:
+(load-truck package5 truck3 s5) - start
  
-34.042:
-(move robot1 location21 location20) - end
+111.04:
+Invariant for (load-truck package5 truck3 s5)
  
-34.044:
-(move robot1 location20 location10) - start
+111.04:
+(board-truck driver4 truck4 s7) - start
  
-36.044:
-Invariant for (move robot1 location20 location10)
+112.04:
+Invariant for (load-truck package5 truck3 s5)
+Invariant for (board-truck driver4 truck4 s7)
  
-36.044:
-(move robot1 location20 location10) - end
+112.04:
+(board-truck driver4 truck4 s7) - end
  
-36.046:
-(pick robot1 part1 location10 location00 robothand1) - start
+113.038:
+Invariant for (load-truck package5 truck3 s5)
  
-37.046:
-Invariant for (pick robot1 part1 location10 location00 robothand1)
+113.038:
+(load-truck package5 truck3 s5) - end
  
-37.046:
-(pick robot1 part1 location10 location00 robothand1) - end
+113.04:
+(board-truck driver5 truck2 s8) - start
  
-37.048:
-(move robot1 location10 location11) - start
+113.042:
+Invariant for (board-truck driver5 truck2 s8)
  
-39.048:
-Invariant for (move robot1 location10 location11)
+113.042:
+(drive-truck truck4 s7 s6 driver4) - start
  
-39.048:
-(move robot1 location10 location11) - end
+114.04:
+Invariant for (board-truck driver5 truck2 s8)
+Invariant for (drive-truck truck4 s7 s6 driver4)
  
-39.05:
-(move robot1 location11 location21) - start
+114.04:
+(board-truck driver5 truck2 s8) - end
  
-41.05:
-Invariant for (move robot1 location11 location21)
+115.046:
+Invariant for (drive-truck truck4 s7 s6 driver4)
  
-41.05:
-(move robot1 location11 location21) - end
+115.046:
+(drive-truck truck2 s8 s9 driver5) - start
  
-41.052:
-(move human1 location12 location11) - start
+123.042:
+Invariant for (drive-truck truck4 s7 s6 driver4)
+Invariant for (drive-truck truck2 s8 s9 driver5)
  
-43.052:
-Invariant for (move human1 location12 location11)
+123.042:
+(drive-truck truck4 s7 s6 driver4) - end
  
-43.052:
-(move human1 location12 location11) - end
+123.044:
+Invariant for (drive-truck truck2 s8 s9 driver5)
  
-43.054:
-(pick human1 part3 location11 location01 rhand1) - start
+123.044:
+(load-truck package8 truck4 s6) - start
  
-44.054:
-Invariant for (pick human1 part3 location11 location01 rhand1)
+125.044:
+Invariant for (drive-truck truck2 s8 s9 driver5)
+Invariant for (load-truck package8 truck4 s6)
  
-44.054:
-(pick human1 part3 location11 location01 rhand1) - end
+125.044:
+(load-truck package8 truck4 s6) - end
  
-44.056:
-(move human1 location11 location12) - start
+125.046:
+Invariant for (drive-truck truck2 s8 s9 driver5)
  
-46.056:
-Invariant for (move human1 location11 location12)
+125.046:
+(drive-truck truck2 s8 s9 driver5) - end
  
-46.056:
-(move human1 location11 location12) - end
+125.048:
+(drive-truck truck2 s9 s4 driver5) - start
  
-46.058:
-(move human1 location12 location22) - start
+135.048:
+Invariant for (drive-truck truck2 s9 s4 driver5)
  
-48.058:
-Invariant for (move human1 location12 location22)
+135.048:
+(drive-truck truck2 s9 s4 driver5) - end
  
-48.058:
-(move human1 location12 location22) - end
+135.05:
+(load-truck package9 truck2 s4) - start
  
-48.06:
-(move robot1 location21 location31) - start
+137.05:
+Invariant for (load-truck package9 truck2 s4)
  
-50.06:
-Invariant for (move robot1 location21 location31)
+137.05:
+(load-truck package9 truck2 s4) - end
  
-50.06:
-(move robot1 location21 location31) - end
+137.052:
+(drive-truck truck2 s4 s5 driver5) - start
  
-50.062:
-(place human1 cab1 location22 location32 part3 rhand1 part3_holder) - start
+137.054:
+Invariant for (drive-truck truck2 s4 s5 driver5)
  
-51.062:
-Invariant for (place human1 cab1 location22 location32 part3 rhand1 part3_holder)
+137.054:
+(drive-truck truck3 s5 s2 driver1) - start
  
-51.062:
-(place human1 cab1 location22 location32 part3 rhand1 part3_holder) - end
+147.052:
+Invariant for (drive-truck truck2 s4 s5 driver5)
+Invariant for (drive-truck truck3 s5 s2 driver1)
  
-51.064:
-(move human1 location22 location12) - start
+147.052:
+(drive-truck truck2 s4 s5 driver5) - end
  
-53.064:
-Invariant for (move human1 location22 location12)
+147.054:
+Invariant for (drive-truck truck3 s5 s2 driver1)
  
-53.064:
-(move human1 location22 location12) - end
+147.054:
+(drive-truck truck3 s5 s2 driver1) - end
  
-53.066:
-(move human1 location12 location11) - start
+147.056:
+(drive-truck truck2 s5 s9 driver5) - start
  
-55.066:
-Invariant for (move human1 location12 location11)
+157.056:
+Invariant for (drive-truck truck2 s5 s9 driver5)
  
-55.066:
-(move human1 location12 location11) - end
+157.056:
+(drive-truck truck2 s5 s9 driver5) - end
  
-55.068:
-(pick human1 part4 location11 location01 rhand1) - start
+157.058:
+(unload-truck package9 truck2 s9) - start
  
-56.068:
-Invariant for (pick human1 part4 location11 location01 rhand1)
+158.06:
+Invariant for (unload-truck package9 truck2 s9)
  
-56.068:
-(pick human1 part4 location11 location01 rhand1) - end
+158.06:
+(disembark-truck driver5 truck2 s9) - start
  
-56.07:
-(move human1 location11 location12) - start
+159.058:
+Invariant for (unload-truck package9 truck2 s9)
+Invariant for (disembark-truck driver5 truck2 s9)
  
-58.07:
-Invariant for (move human1 location11 location12)
+159.058:
+(unload-truck package9 truck2 s9) - end
  
-58.07:
-(move human1 location11 location12) - end
+159.06:
+Invariant for (disembark-truck driver5 truck2 s9)
  
-58.072:
-(move human1 location12 location22) - start
+159.06:
+(disembark-truck driver5 truck2 s9) - end
  
-60.072:
-Invariant for (move human1 location12 location22)
+159.062:
+(drive-truck truck4 s6 s1 driver4) - start
  
-60.072:
-(move human1 location12 location22) - end
+161.066:
+Invariant for (drive-truck truck4 s6 s1 driver4)
  
-60.074:
-(place human1 cab1 location22 location32 part4 rhand1 part4_holder) - start
+161.066:
+(drive-truck truck3 s2 s5 driver1) - start
  
-61.074:
-Invariant for (place human1 cab1 location22 location32 part4 rhand1 part4_holder)
+169.062:
+Invariant for (drive-truck truck4 s6 s1 driver4)
+Invariant for (drive-truck truck3 s2 s5 driver1)
  
-61.074:
-(place human1 cab1 location22 location32 part4 rhand1 part4_holder) - end
+169.062:
+(drive-truck truck4 s6 s1 driver4) - end
  
-61.076:
-(move human1 location22 location23) - start
+169.064:
+Invariant for (drive-truck truck3 s2 s5 driver1)
  
-63.076:
-Invariant for (move human1 location22 location23)
+169.064:
+(unload-truck package8 truck4 s1) - start
  
-63.076:
-(move human1 location22 location23) - end
+171.064:
+Invariant for (drive-truck truck3 s2 s5 driver1)
+Invariant for (unload-truck package8 truck4 s1)
  
-63.078:
-(move human1 location23 location13) - start
+171.064:
+(unload-truck package8 truck4 s1) - end
  
-65.078:
-Invariant for (move human1 location23 location13)
+171.066:
+Invariant for (drive-truck truck3 s2 s5 driver1)
  
-65.078:
-(move human1 location23 location13) - end
+171.066:
+(drive-truck truck3 s2 s5 driver1) - end
  
-65.08:
-(pick human1 part7 location13 location03 rhand1) - start
+171.068:
+(disembark-truck driver4 truck4 s1) - start
  
-66.08:
-Invariant for (pick human1 part7 location13 location03 rhand1)
+172.068:
+Invariant for (disembark-truck driver4 truck4 s1)
  
-66.08:
-(pick human1 part7 location13 location03 rhand1) - end
+172.068:
+(disembark-truck driver4 truck4 s1) - end
  
-66.082:
-(move human1 location13 location12) - start
+172.07:
+(drive-truck truck5 s0 s3 driver2) - start
  
-68.082:
-Invariant for (move human1 location13 location12)
+182.07:
+Invariant for (drive-truck truck5 s0 s3 driver2)
  
-68.082:
-(move human1 location13 location12) - end
+182.07:
+(drive-truck truck5 s0 s3 driver2) - end
  
-68.084:
-(move human1 location12 location22) - start
+182.072:
+(load-truck package2 truck5 s3) - start
  
-70.084:
-Invariant for (move human1 location12 location22)
+184.072:
+Invariant for (load-truck package2 truck5 s3)
  
-70.084:
-(move human1 location12 location22) - end
+184.072:
+(load-truck package2 truck5 s3) - end
  
-70.086:
-(place human1 cab1 location22 location32 part7 rhand1 part7_holder) - start
+184.074:
+(drive-truck truck5 s3 s8 driver2) - start
  
-71.086:
-Invariant for (place human1 cab1 location22 location32 part7 rhand1 part7_holder)
+194.074:
+Invariant for (drive-truck truck5 s3 s8 driver2)
  
-71.086:
-(place human1 cab1 location22 location32 part7 rhand1 part7_holder) - end
+194.074:
+(drive-truck truck5 s3 s8 driver2) - end
  
-71.088:
-(move human1 location22 location23) - start
+194.076:
+(board-truck driver4 truck4 s1) - start
  
-73.088:
-Invariant for (move human1 location22 location23)
+194.078:
+Invariant for (board-truck driver4 truck4 s1)
  
-73.088:
-(move human1 location22 location23) - end
+194.078:
+(load-truck package10 truck5 s8) - start
  
-73.09:
-(move human1 location23 location13) - start
+195.076:
+Invariant for (board-truck driver4 truck4 s1)
+Invariant for (load-truck package10 truck5 s8)
  
-75.09:
-Invariant for (move human1 location23 location13)
+195.076:
+(board-truck driver4 truck4 s1) - end
  
-75.09:
-(move human1 location23 location13) - end
+196.078:
+Invariant for (load-truck package10 truck5 s8)
  
-75.092:
-(move human1 location13 location14) - start
+196.078:
+(load-truck package10 truck5 s8) - end
  
-77.092:
-Invariant for (move human1 location13 location14)
+196.08:
+(drive-truck truck5 s8 s3 driver2) - start
  
-77.092:
-(move human1 location13 location14) - end
+206.08:
+Invariant for (drive-truck truck5 s8 s3 driver2)
  
-77.094:
-(pick human1 part10 location14 location04 rhand1) - start
+206.08:
+(drive-truck truck5 s8 s3 driver2) - end
  
-78.094:
-Invariant for (pick human1 part10 location14 location04 rhand1)
+206.082:
+(drive-truck truck5 s3 s0 driver2) - start
  
-78.094:
-(pick human1 part10 location14 location04 rhand1) - end
+216.082:
+Invariant for (drive-truck truck5 s3 s0 driver2)
  
-78.096:
-(pick human1 part9 location14 location04 lhand1) - start
+216.082:
+(drive-truck truck5 s3 s0 driver2) - end
  
-78.098:
-Invariant for (pick human1 part9 location14 location04 lhand1)
+216.084:
+(drive-truck truck5 s0 s7 driver2) - start
  
-78.098:
-(pick human1 part8 location14 location04 lhand1) - start
+226.084:
+Invariant for (drive-truck truck5 s0 s7 driver2)
  
-79.096:
-Invariant for (pick human1 part9 location14 location04 lhand1)
-Invariant for (pick human1 part8 location14 location04 lhand1)
+226.084:
+(drive-truck truck5 s0 s7 driver2) - end
  
-79.096:
-(pick human1 part9 location14 location04 lhand1) - end
+226.086:
+(unload-truck package4 truck5 s7) - start
  
-79.098:
-Invariant for (pick human1 part8 location14 location04 lhand1)
+228.086:
+Invariant for (unload-truck package4 truck5 s7)
  
-79.098:
-(pick human1 part8 location14 location04 lhand1) - end
+228.086:
+(unload-truck package4 truck5 s7) - end
  
-79.1:
-(move human1 location14 location13) - start
+228.088:
+(drive-truck truck5 s7 s0 driver2) - start
  
-79.102:
-Invariant for (move human1 location14 location13)
+238.088:
+Invariant for (drive-truck truck5 s7 s0 driver2)
  
-79.102:
-(place robot1 cab1 location31 location32 part1 robothand1 part1_holder) - start
+238.088:
+(drive-truck truck5 s7 s0 driver2) - end
  
-80.102:
-Invariant for (move human1 location14 location13)
-Invariant for (place robot1 cab1 location31 location32 part1 robothand1 part1_holder)
+238.09:
+(drive-truck truck3 s5 s9 driver1) - start
  
-80.102:
-(place robot1 cab1 location31 location32 part1 robothand1 part1_holder) - end
+248.09:
+Invariant for (drive-truck truck3 s5 s9 driver1)
  
-81.1:
-Invariant for (move human1 location14 location13)
+248.09:
+(drive-truck truck3 s5 s9 driver1) - end
  
-81.1:
-(move human1 location14 location13) - end
+248.092:
+(drive-truck truck3 s9 s1 driver1) - start
  
-81.102:
-(move human1 location13 location12) - start
+258.092:
+Invariant for (drive-truck truck3 s9 s1 driver1)
  
-83.102:
-Invariant for (move human1 location13 location12)
+258.092:
+(drive-truck truck3 s9 s1 driver1) - end
  
-83.102:
-(move human1 location13 location12) - end
+258.094:
+(unload-truck package5 truck3 s1) - start
  
-83.104:
-(move human1 location12 location22) - start
+260.094:
+Invariant for (unload-truck package5 truck3 s1)
  
-85.104:
-Invariant for (move human1 location12 location22)
+260.094:
+(unload-truck package5 truck3 s1) - end
  
-85.104:
-(move human1 location12 location22) - end
+260.096:
+(drive-truck truck3 s1 s2 driver1) - start
  
-85.106:
-(place human1 cab1 location22 location32 part10 rhand1 part10_holder) - start
+270.096:
+Invariant for (drive-truck truck3 s1 s2 driver1)
  
-86.106:
-Invariant for (place human1 cab1 location22 location32 part10 rhand1 part10_holder)
+270.096:
+(drive-truck truck3 s1 s2 driver1) - end
  
-86.106:
-(place human1 cab1 location22 location32 part10 rhand1 part10_holder) - end
+270.098:
+(drive-truck truck3 s2 s5 driver1) - start
  
-86.108:
-(place human1 cab1 location22 location32 part8 lhand1 part8_holder) - start
+280.098:
+Invariant for (drive-truck truck3 s2 s5 driver1)
  
-86.11:
-Invariant for (place human1 cab1 location22 location32 part8 lhand1 part8_holder)
+280.098:
+(drive-truck truck3 s2 s5 driver1) - end
  
-86.11:
-(move robot1 location31 location21) - start
+280.1:
+(disembark-truck driver4 truck4 s1) - start
  
-87.108:
-Invariant for (place human1 cab1 location22 location32 part8 lhand1 part8_holder)
-Invariant for (move robot1 location31 location21)
+281.1:
+Invariant for (disembark-truck driver4 truck4 s1)
  
-87.108:
-(place human1 cab1 location22 location32 part8 lhand1 part8_holder) - end
+281.1:
+(disembark-truck driver4 truck4 s1) - end
  
-88.11:
-Invariant for (move robot1 location31 location21)
+281.102:
+(drive-truck truck5 s0 s4 driver2) - start
  
-88.11:
-(move robot1 location31 location21) - end
+291.102:
+Invariant for (drive-truck truck5 s0 s4 driver2)
  
-88.112:
-(place human1 cab1 location22 location32 part9 lhand1 part9_holder) - start
+291.102:
+(drive-truck truck5 s0 s4 driver2) - end
  
-89.112:
-Invariant for (place human1 cab1 location22 location32 part9 lhand1 part9_holder)
+291.104:
+(unload-truck package2 truck5 s4) - start
  
-89.112:
-(place human1 cab1 location22 location32 part9 lhand1 part9_holder) - end
+293.104:
+Invariant for (unload-truck package2 truck5 s4)
+ 
+293.104:
+(unload-truck package2 truck5 s4) - end
+ 
+293.106:
+(drive-truck truck5 s4 s0 driver2) - start
+ 
+303.106:
+Invariant for (drive-truck truck5 s4 s0 driver2)
+ 
+303.106:
+(drive-truck truck5 s4 s0 driver2) - end
+ 
+303.108:
+(disembark-truck driver2 truck5 s0) - start
+ 
+304.108:
+Invariant for (disembark-truck driver2 truck5 s0)
+ 
+304.108:
+(disembark-truck driver2 truck5 s0) - end
+ 
+304.11:
+(board-truck driver4 truck4 s1) - start
+ 
+305.11:
+Invariant for (board-truck driver4 truck4 s1)
+ 
+305.11:
+(board-truck driver4 truck4 s1) - end
+ 
+305.112:
+(drive-truck truck4 s1 s2 driver4) - start
+ 
+315.112:
+Invariant for (drive-truck truck4 s1 s2 driver4)
+ 
+315.112:
+(drive-truck truck4 s1 s2 driver4) - end
+ 
+315.114:
+(drive-truck truck4 s2 s7 driver4) - start
+ 
+325.114:
+Invariant for (drive-truck truck4 s2 s7 driver4)
+ 
+325.114:
+(drive-truck truck4 s2 s7 driver4) - end
+ 
+325.116:
+(unload-truck package10 truck5 s0) - start
+ 
+327.116:
+Invariant for (unload-truck package10 truck5 s0)
+ 
+327.116:
+(unload-truck package10 truck5 s0) - end
+ 
+327.118:
+(drive-truck truck4 s7 s6 driver4) - start
+ 
+337.118:
+Invariant for (drive-truck truck4 s7 s6 driver4)
+ 
+337.118:
+(drive-truck truck4 s7 s6 driver4) - end
+ 
+337.12:
+(load-truck package10 truck1 s0) - start
+ 
+339.12:
+Invariant for (load-truck package10 truck1 s0)
+ 
+339.12:
+(load-truck package10 truck1 s0) - end
+ 
+339.122:
+(drive-truck truck4 s6 s1 driver4) - start
+ 
+349.122:
+Invariant for (drive-truck truck4 s6 s1 driver4)
+ 
+349.122:
+(drive-truck truck4 s6 s1 driver4) - end
+ 
+349.124:
+(disembark-truck driver4 truck4 s1) - start
+ 
+350.124:
+Invariant for (disembark-truck driver4 truck4 s1)
+ 
+350.124:
+(disembark-truck driver4 truck4 s1) - end
+ 
+350.126:
+(board-truck driver2 truck1 s0) - start
+ 
+351.126:
+Invariant for (board-truck driver2 truck1 s0)
+ 
+351.126:
+(board-truck driver2 truck1 s0) - end
+ 
+351.128:
+(drive-truck truck1 s0 s7 driver2) - start
+ 
+361.128:
+Invariant for (drive-truck truck1 s0 s7 driver2)
+ 
+361.128:
+(drive-truck truck1 s0 s7 driver2) - end
+ 
+361.13:
+(unload-truck package10 truck1 s7) - start
+ 
+363.13:
+Invariant for (unload-truck package10 truck1 s7)
+ 
+363.13:
+(unload-truck package10 truck1 s7) - end
+ 
+363.132:
+(board-truck driver4 truck4 s1) - start
+ 
+364.132:
+Invariant for (board-truck driver4 truck4 s1)
+ 
+364.132:
+(board-truck driver4 truck4 s1) - end
+ 
+364.134:
+(drive-truck truck4 s1 s2 driver4) - start
+ 
+374.134:
+Invariant for (drive-truck truck4 s1 s2 driver4)
+ 
+374.134:
+(drive-truck truck4 s1 s2 driver4) - end
+ 
+374.136:
+(drive-truck truck4 s2 s7 driver4) - start
+ 
+384.136:
+Invariant for (drive-truck truck4 s2 s7 driver4)
+ 
+384.136:
+(drive-truck truck4 s2 s7 driver4) - end
+ 
+384.138:
+(drive-truck truck4 s7 s0 driver4) - start
+ 
+394.138:
+Invariant for (drive-truck truck4 s7 s0 driver4)
+ 
+394.138:
+(drive-truck truck4 s7 s0 driver4) - end
+ 
+394.14:
+(disembark-truck driver4 truck4 s0) - start
+ 
+395.14:
+Invariant for (disembark-truck driver4 truck4 s0)
+ 
+395.14:
+(disembark-truck driver4 truck4 s0) - end
+ 
+395.142:
+(drive-truck truck1 s7 s0 driver2) - start
+ 
+405.142:
+Invariant for (drive-truck truck1 s7 s0 driver2)
+ 
+405.142:
+(drive-truck truck1 s7 s0 driver2) - end
+ 
+405.144:
+(drive-truck truck1 s0 s3 driver2) - start
+ 
+415.144:
+Invariant for (drive-truck truck1 s0 s3 driver2)
+ 
+415.144:
+(drive-truck truck1 s0 s3 driver2) - end
+ 
+415.146:
+(drive-truck truck1 s3 s1 driver2) - start
+ 
+425.146:
+Invariant for (drive-truck truck1 s3 s1 driver2)
+ 
+425.146:
+(drive-truck truck1 s3 s1 driver2) - end
+ 
+425.148:
+(disembark-truck driver2 truck1 s1) - start
+ 
+426.148:
+Invariant for (disembark-truck driver2 truck1 s1)
+ 
+426.148:
+(disembark-truck driver2 truck1 s1) - end
+ 
+426.15:
+(board-truck driver4 truck4 s0) - start
+ 
+427.15:
+Invariant for (board-truck driver4 truck4 s0)
+ 
+427.15:
+(board-truck driver4 truck4 s0) - end
+ 
+427.152:
+(drive-truck truck4 s0 s4 driver4) - start
+ 
+437.152:
+Invariant for (drive-truck truck4 s0 s4 driver4)
+ 
+437.152:
+(drive-truck truck4 s0 s4 driver4) - end
+ 
+437.154:
+(drive-truck truck4 s4 s1 driver4) - start
+ 
+447.154:
+Invariant for (drive-truck truck4 s4 s1 driver4)
+ 
+447.154:
+(drive-truck truck4 s4 s1 driver4) - end
+ 
+447.156:
+(disembark-truck driver4 truck4 s1) - start
+ 
+448.156:
+Invariant for (disembark-truck driver4 truck4 s1)
+ 
+448.156:
+(disembark-truck driver4 truck4 s1) - end
+ 
+448.158:
+(board-truck driver2 truck4 s1) - start
+ 
+449.158:
+Invariant for (board-truck driver2 truck4 s1)
+ 
+449.158:
+(board-truck driver2 truck4 s1) - end
+ 
+449.16:
+(walk driver3 s5 p0-5) - start
+ 
+459.162:
+(drive-truck truck4 s1 s4 driver2) - start
+ 
+469.16:
+Invariant for (drive-truck truck4 s1 s4 driver2)
+ 
+469.16:
+(walk driver3 s5 p0-5) - end
+ 
+469.162:
+Invariant for (drive-truck truck4 s1 s4 driver2)
+ 
+469.162:
+(drive-truck truck4 s1 s4 driver2) - end
+ 
+469.164:
+(drive-truck truck4 s4 s5 driver2) - start
+ 
+479.164:
+Invariant for (drive-truck truck4 s4 s5 driver2)
+ 
+479.164:
+(drive-truck truck4 s4 s5 driver2) - end
+ 
+479.166:
+(walk driver3 p0-5 s0) - start
+ 
+499.166:
+(walk driver3 p0-5 s0) - end
+ 
+499.168:
+(disembark-truck driver2 truck4 s5) - start
+ 
+500.168:
+Invariant for (disembark-truck driver2 truck4 s5)
+ 
+500.168:
+(disembark-truck driver2 truck4 s5) - end
+ 
+500.17:
+(walk driver2 s5 p0-5) - start
+ 
+520.17:
+(walk driver2 s5 p0-5) - end
+ 
+520.172:
+(walk driver2 p0-5 s0) - start
+ 
+540.172:
+(walk driver2 p0-5 s0) - end
+ 
+540.174:
+(disembark-truck driver1 truck3 s5) - start
+ 
+541.174:
+Invariant for (disembark-truck driver1 truck3 s5)
+ 
+541.174:
+(disembark-truck driver1 truck3 s5) - end
+ 
+541.176:
+(board-truck driver1 truck4 s5) - start
+ 
+542.176:
+Invariant for (board-truck driver1 truck4 s5)
+ 
+542.176:
+(board-truck driver1 truck4 s5) - end
+ 
+542.178:
+(drive-truck truck4 s5 s7 driver1) - start
+ 
+552.178:
+Invariant for (drive-truck truck4 s5 s7 driver1)
+ 
+552.178:
+(drive-truck truck4 s5 s7 driver1) - end
+ 
+552.18:
+(board-truck driver3 truck5 s0) - start
+ 
+553.18:
+Invariant for (board-truck driver3 truck5 s0)
+ 
+553.18:
+(board-truck driver3 truck5 s0) - end
+ 
+553.182:
+(drive-truck truck5 s0 s3 driver3) - start
+ 
+563.182:
+Invariant for (drive-truck truck5 s0 s3 driver3)
+ 
+563.182:
+(drive-truck truck5 s0 s3 driver3) - end
  
 
 Plan Validation details
 -----------------------
 
 Checking next happening (time 0)
-Deleting (occupied location30)
-Deleting (at human1 location30)
+Deleting (at driver2 s1)
+Deleting (empty truck2)
 
-Checking next happening (time 2)
+Checking next happening (time 0.002)
 
-Checking next happening (time 2)
-Adding (occupied location20)
-Adding (at human1 location20)
+Checking next happening (time 0.002)
+Deleting (at package10 s1)
+
+Checking next happening (time 1)
+
+Checking next happening (time 1)
+Adding (driving driver2 truck2)
 
 Checking next happening (time 2.002)
-Deleting (occupied location20)
-Deleting (at human1 location20)
 
-Checking next happening (time 4.002)
+Checking next happening (time 2.002)
+Adding (in package10 truck2)
 
-Checking next happening (time 4.002)
-Adding (occupied location21)
-Adding (at human1 location21)
+Checking next happening (time 2.004)
+Deleting (at driver1 s9)
+Deleting (empty truck3)
 
-Checking next happening (time 4.004)
-Deleting (occupied location21)
-Deleting (at human1 location21)
+Checking next happening (time 3.004)
 
-Checking next happening (time 6.004)
+Checking next happening (time 3.004)
+Adding (driving driver1 truck3)
 
-Checking next happening (time 6.004)
-Adding (occupied location11)
-Adding (at human1 location11)
+Checking next happening (time 3.006)
+Deleting (at truck3 s9)
 
-Checking next happening (time 6.006)
-Deleting (occupied location11)
-Deleting (at human1 location11)
+Checking next happening (time 13.006)
 
-Checking next happening (time 8.006)
+Checking next happening (time 13.006)
+Adding (at truck3 s5)
 
-Checking next happening (time 8.006)
-Adding (occupied location12)
-Adding (at human1 location12)
+Checking next happening (time 13.008)
+Deleting (at truck2 s1)
 
-Checking next happening (time 8.008)
-Deleting (locate part6 location02)
+Checking next happening (time 13.01)
 
-Checking next happening (time 9.008)
+Checking next happening (time 13.01)
+Deleting (at truck3 s5)
 
-Checking next happening (time 9.008)
-Deleting (free rhand1)
-Adding (on part6 rhand1)
+Checking next happening (time 23.008)
 
-Checking next happening (time 9.01)
-Deleting (occupied location12)
-Deleting (at human1 location12)
+Checking next happening (time 23.008)
+Adding (at truck2 s8)
 
-Checking next happening (time 11.01)
+Checking next happening (time 23.01)
 
-Checking next happening (time 11.01)
-Adding (occupied location22)
-Adding (at human1 location22)
+Checking next happening (time 23.01)
+Adding (at truck3 s2)
 
-Checking next happening (time 11.012)
-Deleting (on part6 rhand1)
-Adding (free rhand1)
+Checking next happening (time 23.012)
+Deleting (driving driver2 truck2)
 
-Checking next happening (time 12.012)
+Checking next happening (time 23.014)
 
-Checking next happening (time 12.012)
-Deleting (free part6_holder)
-Adding (on part6 part6_holder)
+Checking next happening (time 23.014)
+Deleting (in package10 truck2)
 
-Checking next happening (time 12.014)
-Deleting (occupied location22)
-Deleting (at human1 location22)
+Checking next happening (time 24.012)
 
-Checking next happening (time 14.014)
+Checking next happening (time 24.012)
+Adding (at driver2 s8)
+Adding (empty truck2)
 
-Checking next happening (time 14.014)
-Adding (occupied location12)
-Adding (at human1 location12)
+Checking next happening (time 25.014)
 
-Checking next happening (time 14.016)
-Deleting (locate part5 location02)
+Checking next happening (time 25.014)
+Adding (at package10 s8)
 
-Checking next happening (time 15.016)
+Checking next happening (time 25.016)
+Deleting (at package6 s2)
 
-Checking next happening (time 15.016)
-Deleting (free lhand1)
-Adding (on part5 lhand1)
+Checking next happening (time 26.018)
 
-Checking next happening (time 15.018)
-Deleting (occupied location12)
-Deleting (at human1 location12)
+Checking next happening (time 26.018)
+Deleting (at driver2 s8)
+Deleting (empty truck5)
 
-Checking next happening (time 17.018)
+Checking next happening (time 27.016)
 
-Checking next happening (time 17.018)
-Adding (occupied location13)
-Adding (at human1 location13)
+Checking next happening (time 27.016)
+Adding (in package6 truck3)
 
-Checking next happening (time 17.02)
-Deleting (occupied location13)
-Deleting (at human1 location13)
+Checking next happening (time 27.018)
 
-Checking next happening (time 17.022)
+Checking next happening (time 27.018)
+Adding (driving driver2 truck5)
 
-Checking next happening (time 17.022)
-Deleting (occupied location31)
-Deleting (at robot1 location31)
+Checking next happening (time 27.02)
+Deleting (at truck3 s2)
 
-Checking next happening (time 19.02)
+Checking next happening (time 27.022)
 
-Checking next happening (time 19.02)
-Adding (occupied location12)
-Adding (at human1 location12)
+Checking next happening (time 27.022)
+Deleting (at truck5 s8)
 
-Checking next happening (time 19.022)
+Checking next happening (time 37.02)
 
-Checking next happening (time 19.022)
-Adding (occupied location21)
-Adding (at robot1 location21)
+Checking next happening (time 37.02)
+Adding (at truck3 s1)
 
-Checking next happening (time 19.024)
-Deleting (occupied location21)
-Deleting (at robot1 location21)
+Checking next happening (time 37.022)
 
-Checking next happening (time 21.024)
+Checking next happening (time 37.022)
+Adding (at truck5 s3)
 
-Checking next happening (time 21.024)
-Adding (occupied location11)
-Adding (at robot1 location11)
+Checking next happening (time 37.024)
+Deleting (at truck5 s3)
 
-Checking next happening (time 21.026)
-Deleting (locate part2 location01)
+Checking next happening (time 47.024)
 
-Checking next happening (time 22.026)
+Checking next happening (time 47.024)
+Adding (at truck5 s0)
 
-Checking next happening (time 22.026)
-Deleting (free robothand1)
-Adding (on part2 robothand1)
+Checking next happening (time 47.026)
+Deleting (at package4 s0)
 
-Checking next happening (time 22.028)
-Deleting (occupied location11)
-Deleting (at robot1 location11)
+Checking next happening (time 48.03)
 
-Checking next happening (time 24.028)
+Checking next happening (time 48.03)
+Deleting (driving driver2 truck5)
 
-Checking next happening (time 24.028)
-Adding (occupied location21)
-Adding (at robot1 location21)
+Checking next happening (time 49.026)
 
-Checking next happening (time 24.03)
-Deleting (occupied location21)
-Deleting (at robot1 location21)
+Checking next happening (time 49.026)
+Adding (in package4 truck5)
 
-Checking next happening (time 26.03)
+Checking next happening (time 49.028)
 
-Checking next happening (time 26.03)
-Adding (occupied location31)
-Adding (at robot1 location31)
+Checking next happening (time 49.028)
+Deleting (in package6 truck3)
 
-Checking next happening (time 26.032)
-Deleting (on part2 robothand1)
-Adding (free robothand1)
+Checking next happening (time 49.03)
 
-Checking next happening (time 27.032)
+Checking next happening (time 49.03)
+Adding (at driver2 s0)
+Adding (empty truck5)
 
-Checking next happening (time 27.032)
-Deleting (free part2_holder)
-Adding (on part2 part2_holder)
+Checking next happening (time 51.028)
 
-Checking next happening (time 27.034)
-Deleting (occupied location12)
-Deleting (at human1 location12)
+Checking next happening (time 51.028)
+Adding (at package6 s1)
 
-Checking next happening (time 29.034)
+Checking next happening (time 51.03)
+Deleting (at truck3 s1)
 
-Checking next happening (time 29.034)
-Adding (occupied location22)
-Adding (at human1 location22)
+Checking next happening (time 61.03)
 
-Checking next happening (time 29.036)
-Deleting (on part5 lhand1)
-Adding (free lhand1)
+Checking next happening (time 61.03)
+Adding (at truck3 s2)
 
-Checking next happening (time 30.036)
+Checking next happening (time 61.032)
+Deleting (at truck3 s2)
 
-Checking next happening (time 30.036)
-Deleting (free part5_holder)
-Adding (on part5 part5_holder)
+Checking next happening (time 71.032)
 
-Checking next happening (time 30.038)
-Deleting (occupied location22)
-Deleting (at human1 location22)
+Checking next happening (time 71.032)
+Adding (at truck3 s5)
 
-Checking next happening (time 30.04)
+Checking next happening (time 71.034)
+Deleting (at driver5 s3)
 
-Checking next happening (time 30.04)
-Deleting (occupied location31)
-Deleting (at robot1 location31)
+Checking next happening (time 91.034)
+Adding (at driver5 p3-8)
 
-Checking next happening (time 32.038)
+Checking next happening (time 91.036)
+Deleting (at driver5 p3-8)
 
-Checking next happening (time 32.038)
-Adding (occupied location12)
-Adding (at human1 location12)
+Checking next happening (time 91.038)
+Deleting (at driver2 s0)
+Deleting (empty truck5)
 
-Checking next happening (time 32.04)
+Checking next happening (time 92.038)
 
-Checking next happening (time 32.04)
-Adding (occupied location21)
-Adding (at robot1 location21)
+Checking next happening (time 92.038)
+Adding (driving driver2 truck5)
 
-Checking next happening (time 32.042)
-Deleting (occupied location21)
-Deleting (at robot1 location21)
+Checking next happening (time 111.036)
+Adding (at driver5 s8)
 
-Checking next happening (time 34.042)
+Checking next happening (time 111.038)
+Deleting (at package5 s5)
 
-Checking next happening (time 34.042)
-Adding (occupied location20)
-Adding (at robot1 location20)
+Checking next happening (time 111.04)
 
-Checking next happening (time 34.044)
-Deleting (occupied location20)
-Deleting (at robot1 location20)
+Checking next happening (time 111.04)
+Deleting (at driver4 s7)
+Deleting (empty truck4)
 
-Checking next happening (time 36.044)
+Checking next happening (time 112.04)
 
-Checking next happening (time 36.044)
-Adding (occupied location10)
-Adding (at robot1 location10)
+Checking next happening (time 112.04)
+Adding (driving driver4 truck4)
 
-Checking next happening (time 36.046)
-Deleting (locate part1 location00)
+Checking next happening (time 113.038)
 
-Checking next happening (time 37.046)
+Checking next happening (time 113.038)
+Adding (in package5 truck3)
 
-Checking next happening (time 37.046)
-Deleting (free robothand1)
-Adding (on part1 robothand1)
+Checking next happening (time 113.04)
+Deleting (at driver5 s8)
+Deleting (empty truck2)
 
-Checking next happening (time 37.048)
-Deleting (occupied location10)
-Deleting (at robot1 location10)
+Checking next happening (time 113.042)
 
-Checking next happening (time 39.048)
+Checking next happening (time 113.042)
+Deleting (at truck4 s7)
 
-Checking next happening (time 39.048)
-Adding (occupied location11)
-Adding (at robot1 location11)
+Checking next happening (time 114.04)
 
-Checking next happening (time 39.05)
-Deleting (occupied location11)
-Deleting (at robot1 location11)
+Checking next happening (time 114.04)
+Adding (driving driver5 truck2)
 
-Checking next happening (time 41.05)
+Checking next happening (time 115.046)
 
-Checking next happening (time 41.05)
-Adding (occupied location21)
-Adding (at robot1 location21)
+Checking next happening (time 115.046)
+Deleting (at truck2 s8)
 
-Checking next happening (time 41.052)
-Deleting (occupied location12)
-Deleting (at human1 location12)
+Checking next happening (time 123.042)
 
-Checking next happening (time 43.052)
+Checking next happening (time 123.042)
+Adding (at truck4 s6)
 
-Checking next happening (time 43.052)
-Adding (occupied location11)
-Adding (at human1 location11)
+Checking next happening (time 123.044)
 
-Checking next happening (time 43.054)
-Deleting (locate part3 location01)
+Checking next happening (time 123.044)
+Deleting (at package8 s6)
 
-Checking next happening (time 44.054)
+Checking next happening (time 125.044)
 
-Checking next happening (time 44.054)
-Deleting (free rhand1)
-Adding (on part3 rhand1)
+Checking next happening (time 125.044)
+Adding (in package8 truck4)
 
-Checking next happening (time 44.056)
-Deleting (occupied location11)
-Deleting (at human1 location11)
+Checking next happening (time 125.046)
 
-Checking next happening (time 46.056)
+Checking next happening (time 125.046)
+Adding (at truck2 s9)
 
-Checking next happening (time 46.056)
-Adding (occupied location12)
-Adding (at human1 location12)
+Checking next happening (time 125.048)
+Deleting (at truck2 s9)
 
-Checking next happening (time 46.058)
-Deleting (occupied location12)
-Deleting (at human1 location12)
+Checking next happening (time 135.048)
 
-Checking next happening (time 48.058)
+Checking next happening (time 135.048)
+Adding (at truck2 s4)
 
-Checking next happening (time 48.058)
-Adding (occupied location22)
-Adding (at human1 location22)
+Checking next happening (time 135.05)
+Deleting (at package9 s4)
 
-Checking next happening (time 48.06)
-Deleting (occupied location21)
-Deleting (at robot1 location21)
+Checking next happening (time 137.05)
 
-Checking next happening (time 50.06)
+Checking next happening (time 137.05)
+Adding (in package9 truck2)
 
-Checking next happening (time 50.06)
-Adding (occupied location31)
-Adding (at robot1 location31)
+Checking next happening (time 137.052)
+Deleting (at truck2 s4)
 
-Checking next happening (time 50.062)
-Deleting (on part3 rhand1)
-Adding (free rhand1)
+Checking next happening (time 137.054)
 
-Checking next happening (time 51.062)
+Checking next happening (time 137.054)
+Deleting (at truck3 s5)
 
-Checking next happening (time 51.062)
-Deleting (free part3_holder)
-Adding (on part3 part3_holder)
+Checking next happening (time 147.052)
 
-Checking next happening (time 51.064)
-Deleting (occupied location22)
-Deleting (at human1 location22)
+Checking next happening (time 147.052)
+Adding (at truck2 s5)
 
-Checking next happening (time 53.064)
+Checking next happening (time 147.054)
 
-Checking next happening (time 53.064)
-Adding (occupied location12)
-Adding (at human1 location12)
+Checking next happening (time 147.054)
+Adding (at truck3 s2)
 
-Checking next happening (time 53.066)
-Deleting (occupied location12)
-Deleting (at human1 location12)
+Checking next happening (time 147.056)
+Deleting (at truck2 s5)
 
-Checking next happening (time 55.066)
+Checking next happening (time 157.056)
 
-Checking next happening (time 55.066)
-Adding (occupied location11)
-Adding (at human1 location11)
+Checking next happening (time 157.056)
+Adding (at truck2 s9)
 
-Checking next happening (time 55.068)
-Deleting (locate part4 location01)
+Checking next happening (time 157.058)
+Deleting (in package9 truck2)
 
-Checking next happening (time 56.068)
+Checking next happening (time 158.06)
 
-Checking next happening (time 56.068)
-Deleting (free rhand1)
-Adding (on part4 rhand1)
+Checking next happening (time 158.06)
+Deleting (driving driver5 truck2)
 
-Checking next happening (time 56.07)
-Deleting (occupied location11)
-Deleting (at human1 location11)
+Checking next happening (time 159.058)
 
-Checking next happening (time 58.07)
+Checking next happening (time 159.058)
+Adding (at package9 s9)
 
-Checking next happening (time 58.07)
-Adding (occupied location12)
-Adding (at human1 location12)
+Checking next happening (time 159.06)
 
-Checking next happening (time 58.072)
-Deleting (occupied location12)
-Deleting (at human1 location12)
+Checking next happening (time 159.06)
+Adding (at driver5 s9)
+Adding (empty truck2)
 
-Checking next happening (time 60.072)
+Checking next happening (time 159.062)
+Deleting (at truck4 s6)
 
-Checking next happening (time 60.072)
-Adding (occupied location22)
-Adding (at human1 location22)
+Checking next happening (time 161.066)
 
-Checking next happening (time 60.074)
-Deleting (on part4 rhand1)
-Adding (free rhand1)
+Checking next happening (time 161.066)
+Deleting (at truck3 s2)
 
-Checking next happening (time 61.074)
+Checking next happening (time 169.062)
 
-Checking next happening (time 61.074)
-Deleting (free part4_holder)
-Adding (on part4 part4_holder)
+Checking next happening (time 169.062)
+Adding (at truck4 s1)
 
-Checking next happening (time 61.076)
-Deleting (occupied location22)
-Deleting (at human1 location22)
+Checking next happening (time 169.064)
 
-Checking next happening (time 63.076)
+Checking next happening (time 169.064)
+Deleting (in package8 truck4)
 
-Checking next happening (time 63.076)
-Adding (occupied location23)
-Adding (at human1 location23)
+Checking next happening (time 171.064)
 
-Checking next happening (time 63.078)
-Deleting (occupied location23)
-Deleting (at human1 location23)
+Checking next happening (time 171.064)
+Adding (at package8 s1)
 
-Checking next happening (time 65.078)
+Checking next happening (time 171.066)
 
-Checking next happening (time 65.078)
-Adding (occupied location13)
-Adding (at human1 location13)
+Checking next happening (time 171.066)
+Adding (at truck3 s5)
 
-Checking next happening (time 65.08)
-Deleting (locate part7 location03)
+Checking next happening (time 171.068)
+Deleting (driving driver4 truck4)
 
-Checking next happening (time 66.08)
+Checking next happening (time 172.068)
 
-Checking next happening (time 66.08)
-Deleting (free rhand1)
-Adding (on part7 rhand1)
+Checking next happening (time 172.068)
+Adding (at driver4 s1)
+Adding (empty truck4)
 
-Checking next happening (time 66.082)
-Deleting (occupied location13)
-Deleting (at human1 location13)
+Checking next happening (time 172.07)
+Deleting (at truck5 s0)
 
-Checking next happening (time 68.082)
+Checking next happening (time 182.07)
 
-Checking next happening (time 68.082)
-Adding (occupied location12)
-Adding (at human1 location12)
+Checking next happening (time 182.07)
+Adding (at truck5 s3)
 
-Checking next happening (time 68.084)
-Deleting (occupied location12)
-Deleting (at human1 location12)
+Checking next happening (time 182.072)
+Deleting (at package2 s3)
 
-Checking next happening (time 70.084)
+Checking next happening (time 184.072)
 
-Checking next happening (time 70.084)
-Adding (occupied location22)
-Adding (at human1 location22)
+Checking next happening (time 184.072)
+Adding (in package2 truck5)
 
-Checking next happening (time 70.086)
-Deleting (on part7 rhand1)
-Adding (free rhand1)
+Checking next happening (time 184.074)
+Deleting (at truck5 s3)
 
-Checking next happening (time 71.086)
+Checking next happening (time 194.074)
 
-Checking next happening (time 71.086)
-Deleting (free part7_holder)
-Adding (on part7 part7_holder)
+Checking next happening (time 194.074)
+Adding (at truck5 s8)
 
-Checking next happening (time 71.088)
-Deleting (occupied location22)
-Deleting (at human1 location22)
+Checking next happening (time 194.076)
+Deleting (at driver4 s1)
+Deleting (empty truck4)
 
-Checking next happening (time 73.088)
+Checking next happening (time 194.078)
 
-Checking next happening (time 73.088)
-Adding (occupied location23)
-Adding (at human1 location23)
+Checking next happening (time 194.078)
+Deleting (at package10 s8)
 
-Checking next happening (time 73.09)
-Deleting (occupied location23)
-Deleting (at human1 location23)
+Checking next happening (time 195.076)
 
-Checking next happening (time 75.09)
+Checking next happening (time 195.076)
+Adding (driving driver4 truck4)
 
-Checking next happening (time 75.09)
-Adding (occupied location13)
-Adding (at human1 location13)
+Checking next happening (time 196.078)
 
-Checking next happening (time 75.092)
-Deleting (occupied location13)
-Deleting (at human1 location13)
+Checking next happening (time 196.078)
+Adding (in package10 truck5)
 
-Checking next happening (time 77.092)
+Checking next happening (time 196.08)
+Deleting (at truck5 s8)
 
-Checking next happening (time 77.092)
-Adding (occupied location14)
-Adding (at human1 location14)
+Checking next happening (time 206.08)
 
-Checking next happening (time 77.094)
-Deleting (locate part10 location04)
+Checking next happening (time 206.08)
+Adding (at truck5 s3)
 
-Checking next happening (time 78.094)
+Checking next happening (time 206.082)
+Deleting (at truck5 s3)
 
-Checking next happening (time 78.094)
-Deleting (free rhand1)
-Adding (on part10 rhand1)
+Checking next happening (time 216.082)
 
-Checking next happening (time 78.096)
-Deleting (locate part9 location04)
+Checking next happening (time 216.082)
+Adding (at truck5 s0)
 
-Checking next happening (time 78.098)
+Checking next happening (time 216.084)
+Deleting (at truck5 s0)
 
-Checking next happening (time 78.098)
-Deleting (locate part8 location04)
+Checking next happening (time 226.084)
 
-Checking next happening (time 79.096)
+Checking next happening (time 226.084)
+Adding (at truck5 s7)
 
-Checking next happening (time 79.096)
-Deleting (free lhand1)
-Adding (on part9 lhand1)
+Checking next happening (time 226.086)
+Deleting (in package4 truck5)
 
-Checking next happening (time 79.098)
+Checking next happening (time 228.086)
 
-Checking next happening (time 79.098)
-Deleting (free lhand1)
-Adding (on part8 lhand1)
+Checking next happening (time 228.086)
+Adding (at package4 s7)
 
-Checking next happening (time 79.1)
-Deleting (occupied location14)
-Deleting (at human1 location14)
+Checking next happening (time 228.088)
+Deleting (at truck5 s7)
 
-Checking next happening (time 79.102)
+Checking next happening (time 238.088)
 
-Checking next happening (time 79.102)
-Deleting (on part1 robothand1)
-Adding (free robothand1)
+Checking next happening (time 238.088)
+Adding (at truck5 s0)
 
-Checking next happening (time 80.102)
+Checking next happening (time 238.09)
+Deleting (at truck3 s5)
 
-Checking next happening (time 80.102)
-Deleting (free part1_holder)
-Adding (on part1 part1_holder)
+Checking next happening (time 248.09)
 
-Checking next happening (time 81.1)
+Checking next happening (time 248.09)
+Adding (at truck3 s9)
 
-Checking next happening (time 81.1)
-Adding (occupied location13)
-Adding (at human1 location13)
+Checking next happening (time 248.092)
+Deleting (at truck3 s9)
 
-Checking next happening (time 81.102)
-Deleting (occupied location13)
-Deleting (at human1 location13)
+Checking next happening (time 258.092)
 
-Checking next happening (time 83.102)
+Checking next happening (time 258.092)
+Adding (at truck3 s1)
 
-Checking next happening (time 83.102)
-Adding (occupied location12)
-Adding (at human1 location12)
+Checking next happening (time 258.094)
+Deleting (in package5 truck3)
 
-Checking next happening (time 83.104)
-Deleting (occupied location12)
-Deleting (at human1 location12)
+Checking next happening (time 260.094)
 
-Checking next happening (time 85.104)
+Checking next happening (time 260.094)
+Adding (at package5 s1)
 
-Checking next happening (time 85.104)
-Adding (occupied location22)
-Adding (at human1 location22)
+Checking next happening (time 260.096)
+Deleting (at truck3 s1)
 
-Checking next happening (time 85.106)
-Deleting (on part10 rhand1)
-Adding (free rhand1)
+Checking next happening (time 270.096)
 
-Checking next happening (time 86.106)
+Checking next happening (time 270.096)
+Adding (at truck3 s2)
 
-Checking next happening (time 86.106)
-Deleting (free part10_holder)
-Adding (on part10 part10_holder)
+Checking next happening (time 270.098)
+Deleting (at truck3 s2)
 
-Checking next happening (time 86.108)
-Deleting (on part8 lhand1)
-Adding (free lhand1)
+Checking next happening (time 280.098)
 
-Checking next happening (time 86.11)
+Checking next happening (time 280.098)
+Adding (at truck3 s5)
 
-Checking next happening (time 86.11)
-Deleting (occupied location31)
-Deleting (at robot1 location31)
+Checking next happening (time 280.1)
+Deleting (driving driver4 truck4)
 
-Checking next happening (time 87.108)
+Checking next happening (time 281.1)
 
-Checking next happening (time 87.108)
-Deleting (free part8_holder)
-Adding (on part8 part8_holder)
+Checking next happening (time 281.1)
+Adding (at driver4 s1)
+Adding (empty truck4)
 
-Checking next happening (time 88.11)
+Checking next happening (time 281.102)
+Deleting (at truck5 s0)
 
-Checking next happening (time 88.11)
-Adding (occupied location21)
-Adding (at robot1 location21)
+Checking next happening (time 291.102)
 
-Checking next happening (time 88.112)
-Deleting (on part9 lhand1)
-Adding (free lhand1)
+Checking next happening (time 291.102)
+Adding (at truck5 s4)
 
-Checking next happening (time 89.112)
+Checking next happening (time 291.104)
+Deleting (in package2 truck5)
 
-Checking next happening (time 89.112)
-Deleting (free part9_holder)
-Adding (on part9 part9_holder)
+Checking next happening (time 293.104)
+
+Checking next happening (time 293.104)
+Adding (at package2 s4)
+
+Checking next happening (time 293.106)
+Deleting (at truck5 s4)
+
+Checking next happening (time 303.106)
+
+Checking next happening (time 303.106)
+Adding (at truck5 s0)
+
+Checking next happening (time 303.108)
+Deleting (driving driver2 truck5)
+
+Checking next happening (time 304.108)
+
+Checking next happening (time 304.108)
+Adding (at driver2 s0)
+Adding (empty truck5)
+
+Checking next happening (time 304.11)
+Deleting (at driver4 s1)
+Deleting (empty truck4)
+
+Checking next happening (time 305.11)
+
+Checking next happening (time 305.11)
+Adding (driving driver4 truck4)
+
+Checking next happening (time 305.112)
+Deleting (at truck4 s1)
+
+Checking next happening (time 315.112)
+
+Checking next happening (time 315.112)
+Adding (at truck4 s2)
+
+Checking next happening (time 315.114)
+Deleting (at truck4 s2)
+
+Checking next happening (time 325.114)
+
+Checking next happening (time 325.114)
+Adding (at truck4 s7)
+
+Checking next happening (time 325.116)
+Deleting (in package10 truck5)
+
+Checking next happening (time 327.116)
+
+Checking next happening (time 327.116)
+Adding (at package10 s0)
+
+Checking next happening (time 327.118)
+Deleting (at truck4 s7)
+
+Checking next happening (time 337.118)
+
+Checking next happening (time 337.118)
+Adding (at truck4 s6)
+
+Checking next happening (time 337.12)
+Deleting (at package10 s0)
+
+Checking next happening (time 339.12)
+
+Checking next happening (time 339.12)
+Adding (in package10 truck1)
+
+Checking next happening (time 339.122)
+Deleting (at truck4 s6)
+
+Checking next happening (time 349.122)
+
+Checking next happening (time 349.122)
+Adding (at truck4 s1)
+
+Checking next happening (time 349.124)
+Deleting (driving driver4 truck4)
+
+Checking next happening (time 350.124)
+
+Checking next happening (time 350.124)
+Adding (at driver4 s1)
+Adding (empty truck4)
+
+Checking next happening (time 350.126)
+Deleting (at driver2 s0)
+Deleting (empty truck1)
+
+Checking next happening (time 351.126)
+
+Checking next happening (time 351.126)
+Adding (driving driver2 truck1)
+
+Checking next happening (time 351.128)
+Deleting (at truck1 s0)
+
+Checking next happening (time 361.128)
+
+Checking next happening (time 361.128)
+Adding (at truck1 s7)
+
+Checking next happening (time 361.13)
+Deleting (in package10 truck1)
+
+Checking next happening (time 363.13)
+
+Checking next happening (time 363.13)
+Adding (at package10 s7)
+
+Checking next happening (time 363.132)
+Deleting (at driver4 s1)
+Deleting (empty truck4)
+
+Checking next happening (time 364.132)
+
+Checking next happening (time 364.132)
+Adding (driving driver4 truck4)
+
+Checking next happening (time 364.134)
+Deleting (at truck4 s1)
+
+Checking next happening (time 374.134)
+
+Checking next happening (time 374.134)
+Adding (at truck4 s2)
+
+Checking next happening (time 374.136)
+Deleting (at truck4 s2)
+
+Checking next happening (time 384.136)
+
+Checking next happening (time 384.136)
+Adding (at truck4 s7)
+
+Checking next happening (time 384.138)
+Deleting (at truck4 s7)
+
+Checking next happening (time 394.138)
+
+Checking next happening (time 394.138)
+Adding (at truck4 s0)
+
+Checking next happening (time 394.14)
+Deleting (driving driver4 truck4)
+
+Checking next happening (time 395.14)
+
+Checking next happening (time 395.14)
+Adding (at driver4 s0)
+Adding (empty truck4)
+
+Checking next happening (time 395.142)
+Deleting (at truck1 s7)
+
+Checking next happening (time 405.142)
+
+Checking next happening (time 405.142)
+Adding (at truck1 s0)
+
+Checking next happening (time 405.144)
+Deleting (at truck1 s0)
+
+Checking next happening (time 415.144)
+
+Checking next happening (time 415.144)
+Adding (at truck1 s3)
+
+Checking next happening (time 415.146)
+Deleting (at truck1 s3)
+
+Checking next happening (time 425.146)
+
+Checking next happening (time 425.146)
+Adding (at truck1 s1)
+
+Checking next happening (time 425.148)
+Deleting (driving driver2 truck1)
+
+Checking next happening (time 426.148)
+
+Checking next happening (time 426.148)
+Adding (at driver2 s1)
+Adding (empty truck1)
+
+Checking next happening (time 426.15)
+Deleting (at driver4 s0)
+Deleting (empty truck4)
+
+Checking next happening (time 427.15)
+
+Checking next happening (time 427.15)
+Adding (driving driver4 truck4)
+
+Checking next happening (time 427.152)
+Deleting (at truck4 s0)
+
+Checking next happening (time 437.152)
+
+Checking next happening (time 437.152)
+Adding (at truck4 s4)
+
+Checking next happening (time 437.154)
+Deleting (at truck4 s4)
+
+Checking next happening (time 447.154)
+
+Checking next happening (time 447.154)
+Adding (at truck4 s1)
+
+Checking next happening (time 447.156)
+Deleting (driving driver4 truck4)
+
+Checking next happening (time 448.156)
+
+Checking next happening (time 448.156)
+Adding (at driver4 s1)
+Adding (empty truck4)
+
+Checking next happening (time 448.158)
+Deleting (at driver2 s1)
+Deleting (empty truck4)
+
+Checking next happening (time 449.158)
+
+Checking next happening (time 449.158)
+Adding (driving driver2 truck4)
+
+Checking next happening (time 449.16)
+Deleting (at driver3 s5)
+
+Checking next happening (time 459.162)
+Deleting (at truck4 s1)
+
+Checking next happening (time 469.16)
+
+Checking next happening (time 469.16)
+Adding (at driver3 p0-5)
+
+Checking next happening (time 469.162)
+
+Checking next happening (time 469.162)
+Adding (at truck4 s4)
+
+Checking next happening (time 469.164)
+Deleting (at truck4 s4)
+
+Checking next happening (time 479.164)
+
+Checking next happening (time 479.164)
+Adding (at truck4 s5)
+
+Checking next happening (time 479.166)
+Deleting (at driver3 p0-5)
+
+Checking next happening (time 499.166)
+Adding (at driver3 s0)
+
+Checking next happening (time 499.168)
+Deleting (driving driver2 truck4)
+
+Checking next happening (time 500.168)
+
+Checking next happening (time 500.168)
+Adding (at driver2 s5)
+Adding (empty truck4)
+
+Checking next happening (time 500.17)
+Deleting (at driver2 s5)
+
+Checking next happening (time 520.17)
+Adding (at driver2 p0-5)
+
+Checking next happening (time 520.172)
+Deleting (at driver2 p0-5)
+
+Checking next happening (time 540.172)
+Adding (at driver2 s0)
+
+Checking next happening (time 540.174)
+Deleting (driving driver1 truck3)
+
+Checking next happening (time 541.174)
+
+Checking next happening (time 541.174)
+Adding (at driver1 s5)
+Adding (empty truck3)
+
+Checking next happening (time 541.176)
+Deleting (at driver1 s5)
+Deleting (empty truck4)
+
+Checking next happening (time 542.176)
+
+Checking next happening (time 542.176)
+Adding (driving driver1 truck4)
+
+Checking next happening (time 542.178)
+Deleting (at truck4 s5)
+
+Checking next happening (time 552.178)
+
+Checking next happening (time 552.178)
+Adding (at truck4 s7)
+
+Checking next happening (time 552.18)
+Deleting (at driver3 s0)
+Deleting (empty truck5)
+
+Checking next happening (time 553.18)
+
+Checking next happening (time 553.18)
+Adding (driving driver3 truck5)
+
+Checking next happening (time 553.182)
+Deleting (at truck5 s0)
+
+Checking next happening (time 563.182)
+
+Checking next happening (time 563.182)
+Adding (at truck5 s3)
 Plan executed successfully - checking goal
 Plan valid
-Final value: 89.112 
+Final value: 563.182 
 
 Successful plans:
-Value: 89.112
- tmp_sas_plan.2 89.112 
+Value: 563.182
+ tmp_sas_plan.2 563.182 
 
