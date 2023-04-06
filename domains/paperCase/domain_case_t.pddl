@@ -1,4 +1,4 @@
-(define (domain SPS)
+((domain SPS)
   (:requirements :strips :typing :negative-preconditions :equality)
   (:types
     location agent holder part cabinet - object
@@ -11,16 +11,16 @@
     (have ?cab - cabinet ?h - holder)
     (at ?ag - agent ?l - path)
     (fixat ?cab - cabinet ?l - path)
+    (occupied ?l - path)
     (free ?h - holder)
     (locate ?p - part ?l - rack)
     (on ?p - part ?h - holder)
-    (notoccupied ?to - path)
   )
 
   (:action move
     :parameters (?ag - agent ?from - path ?to - path)
-    :precondition (and (neighbor ?from ?to) (at ?ag ?from) (notoccupied ?to))
-    :effect (and (at ?ag ?to) (notoccupied ?from) (not (notoccupied ?to)) (not (at ?ag ?from)))
+    :precondition (and (neighbor ?from ?to) (at ?ag ?from) (not (occupied ?to)))
+    :effect (and (at ?ag ?to) (not (occupied ?from)) (occupied ?to) (not (at ?ag ?from)))
   )
 
   (:action pick
